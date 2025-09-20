@@ -1,0 +1,695 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>School Updates for Parents</title>
+    <link href="https://fonts.googleapis.com/css2?family=Algerian&display=swap" rel="stylesheet"> <!-- Import Algerian font -->
+    <link href="https://fonts.googleapis.com/css2?family=Bryndan+Write&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            overflow: hidden; /* Prevent scrolling */
+        }
+        /* Add navy blue and white page borders */
+        .page-border {
+            box-sizing: border-box;
+            min-height: 100vh;
+            min-width: 100vw;
+            border: 12px solid #002147; /* Navy blue outer border */
+            padding: 0;
+            position: relative;
+        }
+        .page-border-inner {
+            box-sizing: border-box;
+            min-height: calc(100vh - 24px);
+            min-width: calc(100vw - 24px);
+            border: 8px solid #fff; /* White inner border */
+            padding: 0;
+            position: relative;
+        }
+        header {
+            display: flex;
+            flex-direction: column; /* Stack school name and slogan */
+            align-items: center;
+            background: #002147; /* Navy blue */
+            color: white;
+            padding: 15px 20px;
+            border-bottom: 2px solid white; /* White border */
+        }
+        header img {
+            max-width: 50px; /* Logo size */
+            margin-bottom: 10px; /* Space between logo and text */
+            border-radius: 15px; /* Crop corners */
+        }
+        header h1 {
+            margin: 0; /* Remove default margin */
+        }
+        header h2 {
+            font-family: 'Algerian', serif; /* Use Algerian font */
+            margin: 0; /* Remove default margin */
+            font-size: 24px; /* Adjust font size */
+            font-weight: normal; /* Remove boldness */
+        }
+        .welcome {
+            padding: 20px;
+            text-align: center;
+        }
+        .login-form, .admin-edit-form, .detail-page, .home-page {
+            display: none; /* Hidden by default */
+            margin: 20px auto;
+            padding: 20px;
+            background: white;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            max-width: 80%; /* Make forms wider */
+            border: 2px solid white; /* White border */
+            max-height: 400px; /* Max height for scrolling */
+            overflow-y: auto; /* Enable vertical scrolling */
+        }
+        .posts {
+            padding: 20px;
+            text-align: center;
+            max-height: 400px; /* Max height for scrolling */
+            overflow-y: auto; /* Enable vertical scrolling */
+        }
+        .guest-count {
+            margin-top: 20px;
+            font-weight: bold;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateY(0);
+            }
+            40% {
+                transform: translateY(-5px);
+            }
+            60% {
+                transform: translateY(-3px);
+            }
+        }
+        .animated {
+            animation: fadeIn 2s ease-in;
+        }
+        .bounce {
+            animation: bounce 1s infinite;
+        }
+        .save-button {
+            margin-bottom: 10px;
+            background: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            width: auto;
+        }
+        .save-button:hover {
+            background: #45a049;
+        }
+        .category-container {
+            display: flex;
+            justify-content: space-between; /* Space out the columns */
+            margin: 20px 0;
+        }
+        .category {
+            flex: 0 0 48%; /* Each category takes up about half the width */
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            padding: 10px;
+            background: white;
+            margin-bottom: 10px; /* Space between rows */
+            text-align: left; /* Align text to the left */
+            cursor: pointer; /* Change cursor to pointer */
+            transition: background 0.3s; /* Smooth background transition */
+        }
+        .category:hover {
+            background-color: #e6f7ff; /* Light blue background on hover */
+        }
+        .category h3 {
+            margin: 0;
+            padding: 0;
+            font-weight: bold; /* Bold category titles */
+            color: #007BFF; /* Blue color for titles */
+        }
+        .comment-section {
+            margin-top: 10px;
+        }
+        .edit-button {
+            background: #007BFF;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+        .edit-button:hover {
+            background: #0056b3;
+        }
+        .edit-input {
+            width: 100%;
+            margin-bottom: 10px;
+        }
+        .tabs {
+            display: flex;
+            justify-content: space-around;
+            margin-bottom: 20px;
+        }
+        .tab {
+            padding: 10px 20px;
+            background: #007BFF;
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .tab:hover {
+            background: #0056b3;
+        }
+        .active {
+            background: #0056b3; /* Darker blue for active tab */
+        }
+        .home-page {
+            text-align: center;
+        }
+        .home-page h1 {
+            font-size: 36px;
+            margin: 20px 0;
+        }
+        .home-page p {
+            font-size: 18px;
+            margin: 10px 0;
+        }
+        /* Add popup styles */
+        #guestWelcomePopup {
+            display: none;
+            position: fixed;
+            z-index: 9999;
+            left: 0; top: 0; right: 0; bottom: 0;
+            background: rgba(0,0,0,0.4);
+            justify-content: center;
+            align-items: center;
+            animation: fadeIn 0.5s;
+        }
+        #guestWelcomePopup .popup-content {
+            background: #fff;
+            padding: 40px 30px;
+            border-radius: 20px;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.2);
+            font-family: 'Bryndan Write', cursive, sans-serif;
+            font-size: 2.5rem;
+            color: #007BFF;
+            text-align: center;
+            animation: popupScale 0.8s cubic-bezier(.68,-0.55,.27,1.55);
+        }
+        @keyframes popupScale {
+            0% { transform: scale(0.2) rotate(-10deg); opacity: 0; }
+            60% { transform: scale(1.1) rotate(3deg); opacity: 1; }
+            80% { transform: scale(0.95) rotate(-2deg);}
+            100% { transform: scale(1) rotate(0deg);}
+        }
+        .read-text-btn {
+            background: #002147; /* Navy blue */
+            color: white;
+            border: none;
+            padding: 4px 8px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 0.95em;
+            margin-left: 8px;
+            margin-bottom: 5px;
+            transition: background 0.2s;
+        }
+        .read-text-btn:hover {
+            background: #00112b; /* Darker navy blue */
+        }
+    </style>
+</head>
+<body>
+<div class="page-border">
+    <div class="page-border-inner">
+        <header>
+            <img src="elim-logo.jpg.jpg" alt="Elim Christian College Logo" style="max-width:90px; margin-bottom:10px; border-radius:15px;">
+            <h1>ELIM CHRISTIAN COLLEGE, BANKET📚</h1>
+            <h2>Gadziriro Yeramangwana</h2>
+        </header>
+
+        <div class="home-page" id="homePage" style="display: block;">
+            <h1>Welcome to Elim Christian College, BANKET📚</h1>
+            <p>Your webpage to stay updated on school activities, events, and announcements.</p>
+            <p>Join us in nurturing a brighter future for our students!</p>
+            <button class="bounce" onclick="showLoginForm()">Next</button>
+        </div>
+
+        <div class="login-form" id="loginForm">
+            <h2>Login</h2>
+            <input type="text" placeholder="Account" id="account" required autocomplete="username">
+            <input type="password" placeholder="Password" id="password" required autocomplete="current-password">
+            <div style="margin:10px 0;">
+                <input type="checkbox" id="saveLoginInfo">
+                <label for="saveLoginInfo" style="font-size: 0.95em;">Save login information</label>
+            </div>
+            <button onclick="checkLogin()">Login</button>
+            <button onclick="showPosts()">Continue as Guest</button>
+        </div>
+
+        <div class="posts" id="posts" style="display: none;">
+            <button class="edit-button" onclick="goBackCustom()">Back</button>
+            <h2>Updates</h2>
+            <div class="category-container">
+                <div class="category" onclick="viewDetail('upcomingEvents')">
+                    <h3>
+                        Upcoming Events
+                        <button class="read-text-btn" type="button" title="Read Aloud" style="padding:4px 8px;" onclick="event.stopPropagation(); readText('upcomingEvents');">🔊</button>
+                    </h3>
+                    <p id="upcomingEvents">Join us for our annual sports day on March 15th!</p>
+                </div>
+                <div class="category" onclick="viewDetail('weeklyReview')">
+                    <h3>
+                        Weekly Review (Vlog)
+                        <button class="read-text-btn" type="button" title="Read Aloud" style="padding:4px 8px;" onclick="event.stopPropagation(); readText('weeklyReview');">🔊</button>
+                    </h3>
+                    <p id="weeklyReview">This week we had a successful parent-teacher meeting.</p>
+                </div>
+            </div>
+            <div class="category-container">
+                <div class="category">
+                    <h3>
+                        Your Reviews
+                        <button class="read-text-btn" type="button" title="Read Aloud" style="padding:4px 8px;" onclick="readReviewsText();">🔊</button>
+                    </h3>
+                    <div class="comment-section">
+                        <textarea id="guestComment" placeholder="Leave a comment..."></textarea>
+                        <button onclick="submitComment()">Submit</button>
+                        <div id="commentsList"></div>
+                    </div>
+                </div>
+                <div class="category" onclick="viewDetail('aboutClub')">
+                    <h3>
+                        About the Club
+                        <button class="read-text-btn" type="button" title="Read Aloud" style="padding:4px 8px;" onclick="event.stopPropagation(); readText('aboutClub');">🔊</button>
+                    </h3>
+                    <p id="aboutClub">Join the photography club to capture beautiful moments and improve your skills. We welcome all levels, from beginners to advanced photographers. Together, we will explore creativity and share our passion for photography!</p>
+                </div>
+            </div>
+            <div class="category-container">
+                <div class="category" onclick="viewDetail('announcements')">
+                    <h3>
+                        Announcements
+                        <button class="read-text-btn" type="button" title="Read Aloud" style="padding:4px 8px;" onclick="event.stopPropagation(); readText('announcements');">🔊</button>
+                    </h3>
+                    <p id="announcements">Stay tuned for important school announcements and updates!</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="detail-page" id="detailPage" style="display: none;">
+            <h2 id="detailTitle"></h2>
+            <button class="read-text-btn" type="button" title="Read Aloud" style="padding:4px 8px;" onclick="readDetailText();">🔊</button>
+            <p id="detailContent"></p>
+            <button onclick="closeDetail()">Close</button>
+        </div>
+
+        <div class="admin-edit-form" id="adminEditForm">
+            <button class="edit-button" onclick="goBackCustom()">Back</button>
+            <div class="tabs">
+                <div class="tab active" onclick="showTab('editUpdates')">Edit Updates</div>
+                <div class="tab" onclick="showTab('submittedReviews')">Submitted Reviews</div>
+                <div class="tab" onclick="showTab('adminAccount')">Admin Account</div>
+            </div>
+            <div id="editUpdates" class="tabContent">
+                <button class="save-button" onclick="savePost()">Save Changes</button>
+                <h2>Edit Updates</h2>
+                <div class="category-container">
+                    <div class="category">
+                        <h3>Upcoming Events</h3>
+                        <textarea id="editUpcomingEvents" class="edit-input" placeholder="Edit Upcoming Events..."></textarea>
+                    </div>
+                    <div class="category">
+                        <h3>Weekly Review (Vlog)</h3>
+                        <textarea id="editWeeklyReview" class="edit-input" placeholder="Edit Weekly Review..."></textarea>
+                    </div>
+                </div>
+                <div class="category-container">
+                    <div class="category">
+                        <h3>About the Club</h3>
+                        <textarea id="editAboutClub" class="edit-input" placeholder="Edit About the Club..."></textarea>
+                    </div>
+                    <div class="category">
+                        <h3>Announcements</h3>
+                        <textarea id="editAnnouncements" class="edit-input" placeholder="Edit Announcements..."></textarea>
+                    </div>
+                </div>
+            </div>
+            <div id="submittedReviews" class="tabContent" style="display: none;">
+                <h3>Submitted Reviews</h3>
+                <div id="adminCommentsList" style="max-height: 200px; overflow-y: auto;"></div>
+            </div>
+            <!-- Admin Account Tab -->
+            <div id="adminAccount" class="tabContent" style="display: none;">
+                <h3>Change Admin Username & Password</h3>
+                <form onsubmit="event.preventDefault(); changeAdminCredentials();">
+                    <label for="newAdminUsername">New Username:</label>
+                    <input type="text" id="newAdminUsername" class="edit-input" required>
+                    <br>
+                    <label for="newAdminPassword">New Password:</label>
+                    <input type="password" id="newAdminPassword" class="edit-input" required>
+                    <br>
+                    <button class="save-button" type="submit">Change Credentials</button>
+                </form>
+                <div id="adminChangeMsg" style="color:green; margin-top:10px;"></div>
+            </div>
+            <input type="file" id="imageUpload" accept="image/*" onchange="previewImage(event)">
+            <img id="imagePreview" style="max-width: 100%; display: none;" />
+            <div class="guest-count" id="guestCountAdmin">Guests visited: 0</div>
+        </div>
+
+        <!-- Guest Welcome Popup -->
+        <div id="guestWelcomePopup" style="display:none;">
+            <div class="popup-content">
+                <span id="welcomeTypewriter"></span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    let updates = {
+        upcomingEvents: "Join us for our annual sports day on March 15th!",
+        weeklyReview: "This week we had a successful parent-teacher meeting.",
+        aboutClub: "Join the photography club to capture beautiful moments and improve your skills. We welcome all levels, from beginners to advanced photographers. Together, we will explore creativity and share our passion for photography!",
+        announcements: "Stay tuned for important school announcements and updates!"
+    };
+
+    let guestCount = 0;
+    let comments = [];
+
+    // Show the home page
+    function showHomePage() {
+        document.getElementById('homePage').style.display = 'block';
+        document.getElementById('loginForm').style.display = 'none';
+        document.getElementById('posts').style.display = 'none';
+        document.getElementById('adminEditForm').style.display = 'none';
+        document.getElementById('detailPage').style.display = 'none';
+        // Hide popup if still visible
+        document.getElementById('guestWelcomePopup').style.display = 'none';
+    }
+
+    // Show the login form
+    function showLoginForm() {
+        document.getElementById('homePage').style.display = 'none';
+        document.getElementById('loginForm').style.display = 'block';
+        document.getElementById('posts').style.display = 'none';
+        document.getElementById('adminEditForm').style.display = 'none';
+        document.getElementById('detailPage').style.display = 'none';
+        document.getElementById('guestWelcomePopup').style.display = 'none';
+    }
+
+    // Show the posts for guests
+    function showPosts() {
+        guestCount++; // Increment guest count
+        document.getElementById('homePage').style.display = 'none';
+        document.getElementById('posts').style.display = 'block';
+        document.getElementById('loginForm').style.display = 'none';
+        document.getElementById('adminEditForm').style.display = 'none';
+        document.getElementById('detailPage').style.display = 'none';
+        showGuestWelcomePopup();
+    }
+
+    // Show animated popup for guest
+    function showGuestWelcomePopup() {
+        const popup = document.getElementById('guestWelcomePopup');
+        popup.style.display = 'flex';
+        setTimeout(() => {
+            readWelcomePopupText();
+        }, 100);
+        setTimeout(() => {
+            popup.style.display = 'none';
+        }, 2200); // Show for 2.2 seconds
+    }
+
+    // View detail for a specific category
+    function viewDetail(category) {
+        document.getElementById('detailTitle').innerText = category.replace(/([A-Z])/g, ' $1').trim();
+        document.getElementById('detailContent').innerText = updates[category];
+        document.getElementById('posts').style.display = 'none';
+        document.getElementById('detailPage').style.display = 'block';
+    }
+
+    // Close detail view
+    function closeDetail() {
+        document.getElementById('detailPage').style.display = 'none';
+        document.getElementById('posts').style.display = 'block';
+    }
+
+    // Check login credentials
+    function checkLogin() {
+        const account = document.getElementById('account').value;
+        const password = document.getElementById('password').value;
+        const adminCreds = getAdminCredentials();
+
+        // Save login info if checkbox is checked
+        if (document.getElementById('saveLoginInfo').checked) {
+            localStorage.setItem('savedLoginInfo', JSON.stringify({ account, password }));
+        } else {
+            localStorage.removeItem('savedLoginInfo');
+        }
+
+        if ((account === 'Wilsontkay' && password === 'KayP') ||
+            (account === adminCreds.username && password === adminCreds.password)) {
+            alert('Login successful! You can now edit updates.');
+            document.getElementById('adminEditForm').style.display = 'block';
+            document.getElementById('loginForm').style.display = 'none';
+            document.getElementById('posts').style.display = 'none';
+            document.getElementById('detailPage').style.display = 'none';
+            document.getElementById('guestCountAdmin').innerText = `Guests visited: ${guestCount}`;
+            loadAdminData();
+            loadComments();
+        } else {
+            alert('Invalid account or password. Please try again.');
+        }
+    }
+
+    // Load current updates into admin form
+    function loadAdminData() {
+        document.getElementById('editUpcomingEvents').value = updates.upcomingEvents;
+        document.getElementById('editWeeklyReview').value = updates.weeklyReview;
+        document.getElementById('editAboutClub').value = updates.aboutClub;
+        document.getElementById('editAnnouncements').value = updates.announcements;
+    }
+
+    // Save the edited post
+    function savePost() {
+        updates.upcomingEvents = document.getElementById('editUpcomingEvents').value;
+        updates.weeklyReview = document.getElementById('editWeeklyReview').value;
+        updates.aboutClub = document.getElementById('editAboutClub').value;
+        updates.announcements = document.getElementById('editAnnouncements').value;
+
+        document.getElementById('upcomingEvents').innerText = updates.upcomingEvents;
+        document.getElementById('weeklyReview').innerText = updates.weeklyReview;
+        document.getElementById('aboutClub').innerText = updates.aboutClub;
+        document.getElementById('announcements').innerText = updates.announcements;
+
+        alert('Updates saved successfully!');
+    }
+
+    // Submit a guest comment
+    function submitComment() {
+        const comment = document.getElementById('guestComment').value;
+        if (comment) {
+            comments.push(comment);
+            document.getElementById('guestComment').value = ''; // Clear the input
+            displayComments();
+            loadComments(); // Refresh admin comments list
+        } else {
+            alert('Please enter a comment.');
+        }
+    }
+
+    // Display comments on the guest side
+    function displayComments() {
+        const commentsList = document.getElementById('commentsList');
+        commentsList.innerHTML = ''; // Clear previous comments
+        comments.forEach((c) => {
+            commentsList.innerHTML += `<p>${c}</p>`;
+        });
+    }
+
+    // Load comments into admin page
+    function loadComments() {
+        const adminCommentsList = document.getElementById('adminCommentsList');
+        adminCommentsList.innerHTML = ''; // Clear previous comments
+        comments.forEach((c) => {
+            adminCommentsList.innerHTML += `<p>${c}</p>`;
+        });
+    }
+
+    // Preview uploaded image
+    function previewImage(event) {
+        const reader = new FileReader();
+        reader.onload = function(){
+            const output = document.getElementById('imagePreview');
+            output.src = reader.result;
+            output.style.display = 'block'; // Show the image
+        }
+        reader.readAsDataURL(event.target.files[0]);
+    }
+
+    // Store admin credentials in localStorage for persistence
+    function getAdminCredentials() {
+        let creds = localStorage.getItem('adminCreds');
+        if (creds) {
+            return JSON.parse(creds);
+        }
+        // Default credentials
+        return { username: 'admin', password: 'admin' };
+    }
+
+    function setAdminCredentials(username, password) {
+        localStorage.setItem('adminCreds', JSON.stringify({ username, password }));
+    }
+
+    // Change admin credentials
+    function changeAdminCredentials() {
+        const newUsername = document.getElementById('newAdminUsername').value.trim();
+        const newPassword = document.getElementById('newAdminPassword').value.trim();
+        if (newUsername && newPassword) {
+            setAdminCredentials(newUsername, newPassword);
+            document.getElementById('adminChangeMsg').innerText = "Admin credentials updated successfully!";
+            setTimeout(() => {
+                document.getElementById('adminChangeMsg').innerText = "";
+            }, 2500);
+        }
+    }
+
+    // Show the welcome message and default view
+    document.addEventListener('DOMContentLoaded', function() {
+        showHomePage(); // Show home page by default
+
+        // Restore saved login info if available
+        const savedLogin = JSON.parse(localStorage.getItem('savedLoginInfo') || '{}');
+        if (savedLogin.account) {
+            document.getElementById('account').value = savedLogin.account;
+            document.getElementById('saveLoginInfo').checked = true;
+        }
+        if (savedLogin.password) {
+            document.getElementById('password').value = savedLogin.password;
+        }
+
+        // Add event listener for Enter key on home page
+        document.getElementById('homePage').addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                showPosts(); // Navigate to posts when Enter is pressed
+            }
+        });
+
+        // Add event listener for Enter key in the login form
+        document.getElementById('loginForm').addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                checkLogin(); // Check login when Enter is pressed
+            }
+        });
+    });
+
+    // Show selected tab in admin
+    function showTab(tab) {
+        const tabs = document.querySelectorAll('.tabContent');
+        tabs.forEach(t => t.style.display = 'none'); // Hide all tabs
+        document.getElementById(tab).style.display = 'block'; // Show selected tab
+
+        const tabHeaders = document.querySelectorAll('.tab');
+        tabHeaders.forEach(t => t.classList.remove('active')); // Remove active class
+        document.querySelector(`.tab[onclick="showTab('${tab}')"]`).classList.add('active'); // Add active class to selected tab
+    }
+
+    // Read text for each category
+    function readText(categoryId) {
+        const el = document.getElementById(categoryId);
+        if (el) {
+            speakText(el.innerText);
+        }
+    }
+
+    // Read all reviews/comments
+    function readReviewsText() {
+        const commentsList = document.getElementById('commentsList');
+        let text = "No reviews yet.";
+        if (commentsList && commentsList.innerText.trim() !== "") {
+            text = "Reviews: " + commentsList.innerText;
+        }
+        speakText(text);
+    }
+
+    // Read detail page text
+    function readDetailText() {
+        const title = document.getElementById('detailTitle').innerText;
+        const content = document.getElementById('detailContent').innerText;
+        speakText(title + ". " + content);
+    }
+
+
+    // Typing effect for Welcome Parent
+    function typeWelcomeText(text, elementId, speed = 70, callback) {
+        const el = document.getElementById(elementId);
+        el.innerHTML = '';
+        let i = 0;
+        function typeChar() {
+            if (i < text.length) {
+                el.innerHTML += text.charAt(i);
+                i++;
+                setTimeout(typeChar, speed);
+            } else if (typeof callback === 'function') {
+                callback();
+            }
+        }
+        typeChar();
+    }
+
+    // Show the welcome popup with typing effect
+    function showGuestWelcomePopup() {
+        document.getElementById('guestWelcomePopup').style.display = 'block';
+        typeWelcomeText('Welcome Parent', 'welcomeTypewriter', 70, function() {
+            setTimeout(function() {
+                document.getElementById('guestWelcomePopup').style.display = 'none';
+                document.getElementById('posts').style.display = 'block';
+            }, 600); // Short pause after animation
+        });
+    }
+
+    // Custom back navigation to avoid going to home page
+    function goBackCustom() {
+        // Stop any ongoing speech
+        if ('speechSynthesis' in window) {
+            window.speechSynthesis.cancel();
+        }
+        // Hide all main sections except login form
+        document.getElementById('posts').style.display = 'none';
+        document.getElementById('adminEditForm').style.display = 'none';
+        document.getElementById('detailPage').style.display = 'none';
+        document.getElementById('loginForm').style.display = 'block';
+        document.getElementById('guestWelcomePopup').style.display = 'none';
+        document.getElementById('homePage').style.display = 'none';
+    }
+
+    // Speech synthesis helper
+    function speakText(text) {
+        if ('speechSynthesis' in window) {
+            window.speechSynthesis.cancel(); // Stop any current speech
+            const utter = new SpeechSynthesisUtterance(text);
+            utter.rate = 1;
+            utter.pitch = 1;
+            window.speechSynthesis.speak(utter);
+        } else {
+            alert("Sorry, your browser does not support text-to-speech.");
+        }
+    }
+</script>
+</body>
+</html>
