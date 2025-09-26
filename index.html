@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,802 +13,256 @@
     <meta name="msapplication-TileColor" content="#002147">
     <meta name="msapplication-tap-highlight" content="no">
     
-    <link rel="manifest" href="data:application/json;base64,eyJuYW1lIjoiRUNDIEludGVyTWVkaWEgQ2x1YiIsInNob3J0X25hbWUiOiJFQ0MgSW50ZXJNZWRpYSIsImRlc2NyaXB0aW9uIjoiU3RheSB1cGRhdGVkIG9uIEVsaW0gQ2hyaXN0aWFuIENvbGxlZ2UgYWN0aXZpdGllcywgZXZlbnRzLCBhbmQgYW5ub3VuY2VtZW50cyIsInN0YXJ0X3VybCI6Ii8iLCJkaXNwbGF5IjoidGFuZGFsb25lIiwib3JpZW50YXRpb24iOiJwb3J0cmFpdCIsImJhY2tncm91bmRfY29sb3IiOiIjRkZGRkZGIiwiY29sb3JzIjpbeyJzcmMiOiJhcHBsaWNhdGlvbi9qc29uIiwidHlwZSI6InRleHQvY3NzIn1dLCJpY29ucyI6W3sic3JjIjoiL2ltZy9pY29uLTQ4LnBuZyIsInNpemVzIjoiNDh4NDgiLCJ0eXBlIjoiaW1hZ2UvcG5nIn0seyJzcmMiOiIvaW1nL2ljb24tNzIucG5nIiwic2l6ZXMiOiI3Mng3MiIsInR5cGUiOiJpbWFnZS9wbmcifSx7InNyYyI6Ii9pbWcvaWNvbi05Ni5wbmciLCJzaXplcyI6Ijk2eDk2IiwidHlwZSI6ImltYWdlL3BuZyJ9LHsic3JjIjoiL2ltZy9pY29uLTE0NC5wbmciLCJzaXplcyI6IjE0NHgxNDQiLCJ0eXBlIjoiaW1hZ2UvcG5nIn0seyJzcmMiOiIvaW1nL2ljb24tMTY4LnBuZyIsInNpemVzIjoiMTY4eDE2OCIsInR5cGUiOiJpbWFnZS9wbmcifSx7InNyYyI6Ii9pbWcvaWNvbi0xOTIucG5nIiwic2l6ZXMiOiIxOTJ4MTkyIiwidHlwZSI6ImltYWdlL3BuZyJ9LHsic3JjIjoiL2ltZy9pY29uLTUxMi5wbmciLCJzaXplcyI6IjUxMng1MTIiLCJ0eXBlIjoiaW1hZ2UvcG5nIn1dfQ==">
-    <link rel="apple-touch-icon" href="/img/icon-192.png">
+    <link rel="manifest" href="data:application/json;base64,eyJuYW1lIjoiRUNDIEludGVyTWVkaWEgQ2x1YiIsInNob3J0X25hbWUiOiJFQ0MgSW50ZXJNZWRpYSIsImRlc2NyaXB0aW9uIjoiU3RheSB1cGRhdGVkIG9uIEVsaW0gQ2hyaXN0aWFuIENvbGxlZ2UgYWN0aXZpdGllcywgZXZlbnRzLCBhbmQgYW5ub3VuY2VtZW50cyIsInN0YXJ0X3VybCI6Ii8iLCJkaXNwbGF5Ijoic3RhbmRhbG9uZSIsImJhY2tncm91bmRfY29sb3IiOiIjMDAyMTQ3IiwidGhlbWVfY29sb3IiOiIjMDAyMTQ3Iiwib3JpZW50YXRpb24iOiJwb3J0cmFpdC1wcmltYXJ5IiwiaWNvbnMiOlt7InNyYyI6Imh0dHBzOi8vcGZzdC5jZjIucG9lY2RuLm5ldC9iYXNlL2ltYWdlLzNiNGYwNjBhZjIwYmE5NzRjMGI4MWRkNjVkMzcyMWJhZjg2YzdmYzZkYjg3YThkMDk2MmZjZjUwYjFjMDRjYT93PTQxMCZoPTQyOCIsInR5cGUiOiJpbWFnZS9wbmciLCJzaXplcyI6IjE5Mng5NiJ9LHsic3JjIjoiaHR0cHM6Ly9wZnN0LmNmMi5wb2VjZG4ubmV0L2Jhc2UvaW1hZ2UvM2I0ZjA2MGFmMjBiYTk3NGMwYjgxZGQ2NWQzNzIxYmFmODZjN2ZjNmRiODdhOGQwOTYyZmNmNTBiMWMwNGNhP3c9NDEwJmg9NDI4IiwidHlwZSI6ImltYWdlL3BuZyIsInNpemVzIjoiNTEyeDUxMiJ9XX0=">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Algerian&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bryndan+Write&display=swap" rel="stylesheet">
     
     <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app-compat.js"></script>
     <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-firestore-compat.js"></script>
     <style>
-        /* ... (Your existing CSS code here) ... */
-        :root {
-            --primary-color: #002147; /* Elim Navy */
-            --secondary-color: #FDB913; /* Elim Gold */
-            --background-color: #f0f0f0;
-            --text-color: #333;
-            --light-text-color: #fff;
-            --border-radius: 8px;
-            --padding: 15px;
-            --transition-speed: 0.3s;
-        }
-
-        /* Base styles */
-        body, html {
+        body {
+            font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            font-family: 'Arial', sans-serif;
-            background-color: var(--background-color);
-            color: var(--text-color);
-            line-height: 1.6;
+            background-color: #f4f4f4;
+            overflow: hidden;
         }
-
-        /* Header */
-        header {
-            background-color: var(--primary-color);
-            color: var(--light-text-color);
-            padding: var(--padding);
-            text-align: center;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-        }
-
-        header h1 {
-            margin: 0;
-            font-size: 1.5em;
-        }
-
-        /* Main Content */
-        main {
-            padding: var(--padding);
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        .page {
-            display: none;
-        }
-
-        .page.active {
-            display: block;
-        }
-
-        /* Buttons and Inputs */
-        button, input[type="submit"], .btn {
-            background-color: var(--secondary-color);
-            color: var(--primary-color);
-            border: none;
-            padding: 10px 20px;
-            border-radius: var(--border-radius);
-            cursor: pointer;
-            font-weight: bold;
-            transition: background-color var(--transition-speed);
-            margin-top: 10px;
-        }
-
-        button:hover, input[type="submit"]:hover, .btn:hover {
-            background-color: darken(var(--secondary-color), 10%);
-        }
-        
-        button:disabled {
-            background-color: #ccc;
-            cursor: not-allowed;
-        }
-
-        input[type="text"], input[type="password"], textarea {
-            width: 100%;
-            padding: 10px;
-            margin: 8px 0;
-            display: inline-block;
-            border: 1px solid #ccc;
-            border-radius: 4px;
+        .page-border {
             box-sizing: border-box;
+            min-height: 100vh;
+            min-width: 100vw;
+            border: 12px solid #002147;
+            padding: 0;
+            position: relative;
         }
-
-        /* Cards/Sections */
-        .card {
-            background-color: #fff;
-            padding: var(--padding);
-            border-radius: var(--border-radius);
-            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-            margin-bottom: var(--padding);
-        }
-        
-        .update-item, .comment-item {
-            border: 1px solid #eee;
-            padding: 10px;
-            border-radius: 4px;
-            margin-bottom: 10px;
+        .page-border-inner {
+            box-sizing: border-box;
+            min-height: calc(100vh - 24px);
+            min-width: calc(100vw - 24px);
+            border: 8px solid #fff;
+            padding: 0;
             position: relative;
         }
         
-        .update-item h3 {
-            color: var(--primary-color);
-            margin-top: 0;
-            margin-bottom: 5px;
-        }
-        
-        .update-item .timestamp, .comment-item .timestamp {
-            display: block;
-            font-size: 0.8em;
-            color: #999;
-            margin-bottom: 5px;
-        }
-        
-        .admin-controls {
-            margin-top: 10px;
-            border-top: 1px dashed #ccc;
-            padding-top: 10px;
-        }
-        
-        .admin-controls button {
-            background-color: #e74c3c;
-            color: var(--light-text-color);
-            padding: 5px 10px;
-            font-size: 0.9em;
-            margin-right: 5px;
-        }
-        
-        .admin-controls button.edit-btn {
-            background-color: #3498db;
-        }
-
-        /* Forms */
-        form label {
-            display: block;
-            margin-top: 10px;
-            font-weight: bold;
-        }
-
-        /* Guest Counter */
-        #guestCountDisplay {
-            text-align: center;
-            margin-bottom: var(--padding);
-            font-size: 1.1em;
-            font-weight: bold;
-            color: var(--primary-color);
-        }
-
-        /* Admin Status */
-        #adminStatus {
-            position: absolute;
-            top: 5px;
-            right: 5px;
-            padding: 3px 8px;
-            font-size: 0.7em;
-            font-weight: bold;
-            border-radius: 5px;
-            background-color: #2ecc71;
-            color: var(--light-text-color);
-        }
-
-        /* Navigation */
-        nav {
-            background-color: #fff;
-            padding: 10px 0;
-            text-align: center;
-            box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.05);
-            position: fixed;
-            bottom: 0;
-            width: 100%;
+        /* Install App Banner */
+        #installBanner {
+            display: none;
+            background: linear-gradient(135deg, #002147 0%, #0066CC 100%);
+            color: white;
+            padding: 12px 20px;
+            position: relative;
             z-index: 1000;
+            border-bottom: 2px solid white;
         }
-
-        nav button {
+        #installBanner .banner-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            max-width: 100%;
+        }
+        #installBanner .banner-info {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        #installBanner .banner-logo {
+            width: 32px;
+            height: 32px;
+            background: white;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            color: #002147;
+            font-size: 14px;
+        }
+        #installBanner .banner-text h4 {
+            margin: 0;
+            font-size: 14px;
+            font-weight: 600;
+        }
+        #installBanner .banner-text p {
+            margin: 0;
+            font-size: 12px;
+            opacity: 0.9;
+        }
+        #installBanner .banner-actions {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        #installBtn {
+            background: white;
+            color: #002147;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 6px;
+            font-size: 12px;
+            font-weight: 600;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            transition: all 0.2s ease;
+        }
+        #installBtn:hover {
+            background: #f0f0f0;
+            transform: translateY(-1px);
+        }
+        #dismissBtn {
             background: none;
             border: none;
-            color: var(--primary-color);
-            font-weight: normal;
-            margin: 0 10px;
-            padding: 5px 10px;
-            transition: color var(--transition-speed);
+            color: white;
+            cursor: pointer;
+            padding: 8px;
+            border-radius: 4px;
+            opacity: 0.8;
+            transition: opacity 0.2s ease;
         }
-
-        nav button:hover, nav button.active {
-            color: var(--secondary-color);
-            border-bottom: 2px solid var(--secondary-color);
+        #dismissBtn:hover {
+            opacity: 1;
         }
-
-        /* Alert Box */
-        #alertBox {
+        
+        /* Offline indicator */
+        .offline-indicator {
             position: fixed;
-            top: 60px; /* Below header */
-            left: 50%;
-            transform: translateX(-50%);
-            z-index: 2000;
-            width: 90%;
-            max-width: 400px;
+            top: 10px;
+            right: 10px;
+            background: #ff6b6b;
+            color: white;
+            padding: 8px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            z-index: 1001;
+            display: none;
+            animation: fadeIn 0.3s ease;
+        }
+        .offline-indicator.online {
+            background: #51cf66;
+        }
+        
+        header {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background: #002147;
+            color: white;
+            padding: 15px 20px;
+            border-bottom: 2px solid white;
+        }
+        header img {
+            max-width: 50px;
+            margin-bottom: 10px;
+            border-radius: 15px;
+        }
+        header h1 {
+            margin: 0;
+            font-size: clamp(18px, 4vw, 24px);
             text-align: center;
         }
-
-        .alert {
-            padding: 10px;
-            border-radius: var(--border-radius);
+        header h2 {
+            font-family: 'Algerian', serif;
+            margin: 0;
+            font-size: clamp(16px, 3vw, 20px);
+            font-weight: normal;
+            text-align: center;
+        }
+        .welcome {
+            padding: 20px;
+            text-align: center;
+        }
+        .login-form, .admin-edit-form, .detail-page, .home-page {
+            display: none;
+            margin: 20px auto;
+            padding: 20px;
+            background: white;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            max-width: 90%;
+            border: 2px solid white;
+            max-height: 400px;
+            overflow-y: auto;
+        }
+        .posts {
+            padding: 20px;
+            text-align: center;
+            max-height: 400px;
+            overflow-y: auto;
+        }
+        .guest-count {
+            margin-top: 20px;
+            font-weight: bold;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateY(0);
+            }
+            40% {
+                transform: translateY(-5px);
+            }
+            60% {
+                transform: translateY(-3px);
+            }
+        }
+        .animated {
+            animation: fadeIn 2s ease-in;
+        }
+        .bounce {
+            animation: bounce 1s infinite;
+        }
+        .save-button {
             margin-bottom: 10px;
-            opacity: 0;
-            transition: opacity 0.5s, transform 0.5s;
-            transform: translateY(-20px);
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+            background: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            width: auto;
         }
-
-        .alert.show {
-            opacity: 1;
-            transform: translateY(0);
+        .save-button:hover {
+            background: #45a049;
         }
-
-        .alert-success {
-            background-color: #d4edda;
-            color: #155724;
-            border: 1px solid #c3e6cb;
+        .category-container {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin: 20px 0;
         }
-
-        .alert-error {
-            background-color: #f8d7da;
-            color: #721c24;
-            border: 1px solid #f5c6cb;
+        .category {
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            padding: 15px;
+            background: white;
+            text-align: left;
+            cursor: pointer;
+            transition: all 0.3s ease;
         }
-        
-        .alert-info {
-            background-color: #d1ecf1;
-            color: #0c5460;
-            border: 1px solid #bee5eb;
+        .category:hover {
+            background-color: #e6f7ff;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
         }
-
-        .online-indicator {
-            position: fixed;
-            bottom: 70px;
-            right: 15px;
-            width: 10px;
-            height: 10px;
-            border-radius: 50%;
-            background-color: #ccc;
-            z-index: 1001;
+        .category h3 {
+            margin: 0 0 8px 0;
+            padding: 0;
+            font-weight: bold;
+            color: #007BFF;
+            font-size: 16px;
         }
-
-        .online-indicator.online {
-            background-color: #2ecc71;
+        .category p {
+            margin: 0;
+            font-size: 14px;
+            line-height: 1.4;
         }
-        
-        /* Utility */
-        .hidden {
-            display: none !important;
+        .comment-section {
+            margin-top: 10px;
         }
-    </style>
-</head>
-<body>
-    <header>
-        <h1>ECC InterMedia Club</h1>
-        <div id="adminStatus" class="hidden">ADMIN</div>
-        <button onclick="showPage('homePage')" class="btn" style="position: absolute; right: 10px; top: 10px; padding: 5px 10px; font-size: 0.8em;">Home</button>
-    </header>
-
-    <main>
-        <div id="alertBox"></div>
-        
-        <div id="homePage" class="page active card">
-            <h2>Welcome to the Club!</h2>
-            <p>Stay updated on Elim Christian College activities, events, and announcements.</p>
-            <div id="guestCountDisplay"></div>
-            <button onclick="showPosts()">Continue as Guest</button>
-            <button onclick="showPage('loginPage')">Admin Login</button>
-        </div>
-
-        <div id="postsPage" class="page">
-            <h2>Latest Updates</h2>
-            
-            <div id="updateFormSection" class="card hidden">
-                <h3>New Update</h3>
-                <input type="text" id="updateTitle" placeholder="Update Title" required>
-                <textarea id="updateContent" placeholder="Update Content" rows="4" required></textarea>
-                <button onclick="submitUpdate()">Post Update</button>
-                <button onclick="cancelEdit()" class="hidden" id="cancelEditButton">Cancel Edit</button>
-            </div>
-            
-            <div id="updatesList">
-                </div>
-        </div>
-
-        <div id="commentsPage" class="page">
-            <h2>Guest Comments</h2>
-            
-            <div class="card">
-                <h3>Leave a Comment</h3>
-                <input type="text" id="commentAuthor" placeholder="Your Name (Optional)">
-                <textarea id="commentContent" placeholder="Your Comment" rows="3" required></textarea>
-                <button onclick="submitComment()">Submit Comment</button>
-            </div>
-
-            <div id="commentsList">
-                </div>
-        </div>
-
-        <div id="loginPage" class="page card">
-            <h2>Admin Login</h2>
-            <form id="loginForm">
-                <label for="account">Account Name</label>
-                <input type="text" id="account" required>
-                
-                <label for="password">Password</label>
-                <input type="password" id="password" required>
-                
-                <label>
-                    <input type="checkbox" id="saveLoginInfo"> Remember Login (Local Only)
-                </label>
-                
-                <button type="button" onclick="checkLogin()">Login</button>
-                <button type="button" onclick="showHomePage()">Back</button>
-            </form>
-            
-            <div id="adminSettings" class="hidden" style="margin-top: 20px;">
-                <h3>Admin Tools</h3>
-                <button onclick="resetApp()">Reset All Data</button>
-                <button onclick="logout()">Logout</button>
-            </div>
-        </div>
-    </main>
-    
-    <div class="online-indicator" id="onlineIndicator"></div>
-
-    <nav id="navBar" class="hidden">
-        <button id="navHome" onclick="showHomePage()">Home</button>
-        <button id="navUpdates" onclick="showPosts()">Updates</button>
-        <button id="navComments" onclick="showComments()">Comments</button>
-    </nav>
-
-<script>
-    // 🚨🚨 START: FIREBASE CONFIGURATION 🚨🚨
-    // ⚠️ WARNING: YOU MUST REPLACE THESE PLACEHOLDERS WITH YOUR ACTUAL FIREBASE PROJECT CONFIG
-    const firebaseConfig = {
-        apiKey: "YOUR_API_KEY_HERE",
-        authDomain: "YOUR_PROJECT.firebaseapp.com",
-        projectId: "YOUR_PROJECT_ID",
-        storageBucket: "YOUR_PROJECT.appspot.com",
-        messagingSenderId: "YOUR_MESSAGING_SENDER_ID",
-        appId: "YOUR_APP_ID"
-    };
-
-    // Initialize Firebase and Firestore
-    const firebaseApp = firebase.initializeApp(firebaseConfig);
-    const db = firebaseApp.firestore();
-    const APP_DOCUMENT_ID = 'ecc_club_data'; // The single document where all app data is stored
-    // 🚨🚨 END: FIREBASE CONFIGURATION 🚨🚨
-    
-    let appData = {
-        updates: [],
-        comments: [],
-        guestCount: 0,
-        adminCreds: { account: 'admin', password: 'password123' }, // Default for first run
-        isAdminLoggedIn: false,
-        editingUpdateId: null
-    };
-
-    // --- Utility Functions ---
-
-    /**
-     * 🟢 MODIFIED: Saves data to local storage for PWA resilience, AND 
-     * attempts to save to Firestore ONLY if the admin is logged in.
-     */
-    function saveAppData() {
-        console.log('Saving data...');
-
-        // 1. Save locally for PWA offline resilience (always)
-        localStorage.setItem('eccAppData', JSON.stringify(appData));
-        
-        // 2. Attempt to save to the Cloud (only if the user is the admin)
-        if (appData.isAdminLoggedIn) {
-            // Create a temporary object to send to the cloud, excluding the local login state
-            const dataToSave = { ...appData, isAdminLoggedIn: false };
-            
-            db.collection('app_data').doc(APP_DOCUMENT_ID).set(dataToSave)
-                .then(() => {
-                    showAlert('✅ Data saved to Cloud successfully!', 'success');
-                })
-                .catch(error => {
-                    console.error("Error writing document to Cloud:", error);
-                    showAlert('❌ Error saving data to Cloud! Check connection or console.', 'error');
-                });
-        }
-    }
-
-    /**
-     * 🟢 NEW: Replaces loadAppData(). Sets up a real-time listener to sync all data 
-     * from the cloud.
-     */
-    function startRealTimeSync() {
-        // 1. Load from local storage immediately for fast load/offline mode
-        const savedData = localStorage.getItem('eccAppData');
-        if (savedData) {
-            const localData = JSON.parse(savedData);
-            // Only update data structure, but keep local login status separate
-            const currentIsAdmin = appData.isAdminLoggedIn;
-            appData = localData;
-            appData.isAdminLoggedIn = currentIsAdmin;
-            console.log("Initial data loaded from local storage.");
-            updateUI();
-        }
-
-        // 2. Set up real-time listener for cloud updates (overwrites local data if successful)
-        db.collection('app_data').doc(APP_DOCUMENT_ID)
-            .onSnapshot(doc => {
-                if (doc.exists) {
-                    const cloudData = doc.data();
-                    const currentIsAdmin = appData.isAdminLoggedIn;
-                    
-                    // Overwrite all appData properties with cloud data
-                    Object.assign(appData, cloudData);
-
-                    // IMPORTANT: Preserve the current login status, as this is session-specific.
-                    appData.isAdminLoggedIn = currentIsAdmin; 
-
-                    // Re-save the merged data to local storage for persistence
-                    localStorage.setItem('eccAppData', JSON.stringify(appData));
-                    
-                    console.log("Cloud update received and applied.");
-                    showAlert('🚀 Content updated from Cloud!', 'info');
-                    updateUI(); // Re-render the interface with fresh data
-                } else {
-                    console.log("No cloud data found. Using local data.");
-                    // If this is the very first time, save the initial data to the cloud
-                    if (appData.isAdminLoggedIn) {
-                       saveAppData(); 
-                    }
-                }
-            }, error => {
-                console.error("Firestore listener error:", error);
-                showAlert('⚠️ Failed to sync with Cloud database. Running offline/locally.', 'warning');
-            });
-    }
-
-    /**
-     * 🟢 NEW: Central function to re-render all dynamic parts of the UI.
-     */
-    function updateUI() {
-        renderUpdates();
-        renderComments();
-        updateGuestCountDisplay();
-        document.getElementById('adminStatus').classList.toggle('hidden', !appData.isAdminLoggedIn);
-        document.getElementById('updateFormSection').classList.toggle('hidden', !appData.isAdminLoggedIn);
-        document.getElementById('adminSettings').classList.toggle('hidden', !appData.isAdminLoggedIn);
-    }
-
-    // --- View and Navigation Functions ---
-
-    function showPage(pageId) {
-        document.querySelectorAll('.page').forEach(page => {
-            page.classList.remove('active');
-        });
-        document.getElementById(pageId).classList.add('active');
-        
-        document.querySelectorAll('nav button').forEach(btn => {
-            btn.classList.remove('active');
-        });
-
-        if (pageId === 'homePage') {
-            document.getElementById('navBar').classList.add('hidden');
-        } else {
-            document.getElementById('navBar').classList.remove('hidden');
-            if (pageId === 'postsPage') document.getElementById('navUpdates').classList.add('active');
-            if (pageId === 'commentsPage') document.getElementById('navComments').classList.add('active');
-        }
-    }
-
-    function showHomePage() {
-        showPage('homePage');
-        document.getElementById('navHome').classList.add('active');
-    }
-    
-    function showPosts() {
-        showPage('postsPage');
-        appData.guestCount++;
-        saveAppData(); // Save updated guest count
-        updateUI(); 
-    }
-
-    function showComments() {
-        showPage('commentsPage');
-        updateUI();
-    }
-
-    // --- Admin/Login Functions ---
-
-    function checkLogin() {
-        const account = document.getElementById('account').value;
-        const password = document.getElementById('password').value;
-        const saveInfo = document.getElementById('saveLoginInfo').checked;
-
-        if (account === appData.adminCreds.account && password === appData.adminCreds.password) {
-            appData.isAdminLoggedIn = true;
-            saveAppData(); // 🟢 MODIFIED: Save to Cloud after successful login
-
-            if (saveInfo) {
-                localStorage.setItem('savedLoginInfo', JSON.stringify({ account, password }));
-            } else {
-                localStorage.removeItem('savedLoginInfo');
-            }
-            
-            showAlert('Login Successful!', 'success');
-            showPosts();
-        } else {
-            showAlert('Invalid Account or Password!', 'error');
-        }
-    }
-
-    function logout() {
-        appData.isAdminLoggedIn = false;
-        appData.adminCreds = { account: 'admin', password: 'password123' }; // Reset to default
-        localStorage.removeItem('savedLoginInfo');
-        saveAppData(); // Save status (which also pushes the update to cloud, turning off admin status)
-        showAlert('Logged out successfully.', 'info');
-        showHomePage();
-    }
-    
-    function resetApp() {
-        if (confirm('WARNING: This will erase all updates, comments, and reset the guest count on all devices. Are you sure?')) {
-            appData = {
-                updates: [],
-                comments: [],
-                guestCount: 0,
-                adminCreds: { account: 'admin', password: 'password123' },
-                isAdminLoggedIn: appData.isAdminLoggedIn, // Keep current admin status
-                editingUpdateId: null
-            };
-            saveAppData(); // Save to cloud and local
-            localStorage.removeItem('savedLoginInfo');
-            showAlert('Application data has been fully reset.', 'success');
-            updateUI();
-            showPosts();
-        }
-    }
-
-    // --- Update Management Functions ---
-
-    function submitUpdate() {
-        const title = document.getElementById('updateTitle').value.trim();
-        const content = document.getElementById('updateContent').value.trim();
-
-        if (title && content) {
-            if (appData.editingUpdateId !== null) {
-                // Edit existing update
-                const index = appData.updates.findIndex(u => u.id === appData.editingUpdateId);
-                if (index !== -1) {
-                    appData.updates[index].title = title;
-                    appData.updates[index].content = content;
-                    appData.updates[index].timestamp = new Date().toLocaleString();
-                    showAlert('Update successfully modified!', 'success');
-                }
-            } else {
-                // New update
-                const newUpdate = {
-                    id: Date.now(),
-                    title: title,
-                    content: content,
-                    timestamp: new Date().toLocaleString()
-                };
-                appData.updates.unshift(newUpdate); // Add to the start
-                showAlert('New Update Posted!', 'success');
-            }
-
-            // Reset form and editing state
-            document.getElementById('updateTitle').value = '';
-            document.getElementById('updateContent').value = '';
-            appData.editingUpdateId = null;
-            document.getElementById('cancelEditButton').classList.add('hidden');
-
-            saveAppData(); // Save changes
-            updateUI(); 
-
-        } else {
-            showAlert('Please enter both a title and content for the update.', 'error');
-        }
-    }
-
-    function renderUpdates() {
-        const list = document.getElementById('updatesList');
-        list.innerHTML = '';
-
-        if (appData.updates.length === 0) {
-            list.innerHTML = '<p>No updates yet.</p>';
-            return;
-        }
-
-        appData.updates.forEach(update => {
-            const div = document.createElement('div');
-            div.className = 'update-item card';
-            div.innerHTML = `
-                <h3>${update.title}</h3>
-                <span class="timestamp">${update.timestamp}</span>
-                <p>${update.content.replace(/\n/g, '<br>')}</p>
-                ${appData.isAdminLoggedIn ? `
-                    <div class="admin-controls">
-                        <button class="edit-btn" onclick="editUpdate(${update.id})">Edit</button>
-                        <button onclick="deleteUpdate(${update.id})">Delete</button>
-                    </div>
-                ` : ''}
-            `;
-            list.appendChild(div);
-        });
-    }
-
-    function editUpdate(id) {
-        const update = appData.updates.find(u => u.id === id);
-        if (update) {
-            document.getElementById('updateTitle').value = update.title;
-            document.getElementById('updateContent').value = update.content;
-            appData.editingUpdateId = id;
-            document.getElementById('cancelEditButton').classList.remove('hidden');
-            showAlert(`Editing: "${update.title}"`, 'info');
-            // Scroll to the edit form
-            document.getElementById('updateFormSection').scrollIntoView({ behavior: 'smooth' });
-        }
-    }
-
-    function cancelEdit() {
-        document.getElementById('updateTitle').value = '';
-        document.getElementById('updateContent').value = '';
-        appData.editingUpdateId = null;
-        document.getElementById('cancelEditButton').classList.add('hidden');
-        showAlert('Edit cancelled.', 'warning');
-    }
-
-    function deleteUpdate(id) {
-        if (confirm('Are you sure you want to delete this update?')) {
-            appData.updates = appData.updates.filter(u => u.id !== id);
-            saveAppData(); // Save changes
-            updateUI(); 
-            showAlert('Update deleted.', 'warning');
-        }
-    }
-
-    // --- Comment Management Functions ---
-
-    function submitComment() {
-        const author = document.getElementById('commentAuthor').value.trim() || 'Anonymous Guest';
-        const content = document.getElementById('commentContent').value.trim();
-
-        if (content) {
-            const newComment = {
-                id: Date.now(),
-                author: author,
-                content: content,
-                timestamp: new Date().toLocaleString()
-            };
-            appData.comments.unshift(newComment); // Add to the start
-            
-            // Clear the form fields
-            document.getElementById('commentAuthor').value = '';
-            document.getElementById('commentContent').value = '';
-
-            saveAppData(); // Save changes
-            updateUI(); 
-            showAlert('Comment Submitted!', 'success');
-
-        } else {
-            showAlert('Please enter comment content.', 'error');
-        }
-    }
-
-    function renderComments() {
-        const list = document.getElementById('commentsList');
-        list.innerHTML = '';
-
-        if (appData.comments.length === 0) {
-            list.innerHTML = '<p>No comments yet.</p>';
-            return;
-        }
-
-        appData.comments.forEach(comment => {
-            const div = document.createElement('div');
-            div.className = 'comment-item';
-            div.innerHTML = `
-                <p><strong>${comment.author}</strong> <span class="timestamp">(${comment.timestamp})</span></p>
-                <p>${comment.content.replace(/\n/g, '<br>')}</p>
-                ${appData.isAdminLoggedIn ? `
-                    <div class="admin-controls">
-                        <button onclick="deleteComment(${comment.id})">Delete</button>
-                    </div>
-                ` : ''}
-            `;
-            list.appendChild(div);
-        });
-    }
-
-    function deleteComment(id) {
-        if (confirm('Are you sure you want to delete this comment?')) {
-            appData.comments = appData.comments.filter(c => c.id !== id);
-            saveAppData(); // Save changes
-            updateUI(); 
-            showAlert('Comment deleted.', 'warning');
-        }
-    }
-
-    // --- Guest Count Functions ---
-
-    function updateGuestCountDisplay() {
-        document.getElementById('guestCountDisplay').textContent = 
-            `Total Guest Views: ${appData.guestCount}`;
-    }
-
-    // --- Offline/Alert Functions ---
-    
-    function updateOnlineStatus() {
-        const indicator = document.getElementById('onlineIndicator');
-        if (navigator.onLine) {
-            indicator.classList.add('online');
-            indicator.title = "Online";
-        } else {
-            indicator.classList.remove('online');
-            indicator.title = "Offline";
-        }
-    }
-
-    window.addEventListener('online', updateOnlineStatus);
-    window.addEventListener('offline', updateOnlineStatus);
-
-    function showAlert(message, type) {
-        const alertBox = document.getElementById('alertBox');
-        const alertDiv = document.createElement('div');
-        alertDiv.className = `alert alert-${type}`;
-        alertDiv.textContent = message;
-        
-        alertBox.appendChild(alertDiv);
-        
-        // Show the alert
-        setTimeout(() => {
-            alertDiv.classList.add('show');
-        }, 10); // Small delay for CSS transition
-
-        // Hide and remove after 3 seconds
-        setTimeout(() => {
-            alertDiv.classList.remove('show');
-            setTimeout(() => {
-                if (alertDiv.parentElement) {
-                    alertDiv.remove();
-                }
-            }, 500); // Wait for transition to finish
-        }, 3000);
-    }
-
-    // Initialize app
-    document.addEventListener('DOMContentLoaded', function() {
-        // 🟢 MODIFIED: Start the real-time sync instead of a one-time load
-        startRealTimeSync(); 
-        showHomePage();
-        updateOnlineStatus(); // Check initial online status
-
-        // Restore saved login info if available
-        const savedLogin = JSON.parse(localStorage.getItem('savedLoginInfo') || '{}');
-        if (savedLogin.account) {
-            document.getElementById('account').value = savedLogin.account;
-            document.getElementById('saveLoginInfo').checked = true;
-        }
-        if (savedLogin.password) {
-            document.getElementById('password').value = savedLogin.password;
-        }
-
-        // Add event listener for Enter key on home page
-        document.getElementById('homePage').addEventListener('keypress', function(e) {
-            if (e.key === 'Enter') {
-                showPosts();
-            }
-        });
-
-        // Add event listener for Enter key in the login form
-        document.getElementById('loginForm').addEventListener('keypress', function(e) {
-            if (e.key === 'Enter') {
-                checkLogin();
-            }
-        });
-
-        // Auto-save data periodically (every 5 minutes)
-        // This is primarily for saving the admin's local login session
-        setInterval(saveAppData, 5 * 60 * 1000);
-    });
-
-    // Save data before the page unloads
-    window.addEventListener('beforeunload', function() {
-        saveAppData();
-    });
-</script>
-</body>
-</html>
-
+        .edit-button {
+            background: #007BFF;
