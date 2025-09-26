@@ -1,0 +1,14 @@
+{
+  "name": "Elim Christian College Literacy App",
+  "version": "1.0.0",
+  "description": "Interactive literacy app with stories and games",
+  "instructions": "This app works offline after installation. All stories include audio narration and some have videos.",
+  "stories": 12,
+  "games": 12,
+  "features": [
+    "Audio narration",
+    "Video stories",
+    "Educational games",
+    "Offline support"
+  ]
+}
