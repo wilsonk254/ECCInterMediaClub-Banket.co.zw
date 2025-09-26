@@ -1,0 +1,27 @@
+{
+  "name": "ECC InterMedia Club",
+  "short_name": "ECC InterMedia",
+  "description": "Stay updated on Elim Christian College activities, events, and announcements",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#002147",
+  "theme_color": "#002147",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/elim-logo.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "maskable any"
+    },
+    {
+      "src": "/elim-logo.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable any"
+    }
+  ],
+  "categories": ["education", "productivity"],
+  "lang": "en",
+  "dir": "ltr"
+}
