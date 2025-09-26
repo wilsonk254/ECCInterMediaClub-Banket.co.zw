@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,1042 +14,765 @@
     <meta name="msapplication-TileColor" content="#002147">
     <meta name="msapplication-tap-highlight" content="no">
     
-    <link rel="manifest" href="data:application/json;base64,eyJuYW1lIjoiRUNDIEludGVyTWVkaWEgQ2x1YiIsInNob3J0X25hbWUiOiJFQ0MgSW50ZXJNZWRpYSIsImRlc2NyaXB0aW9uIjoiU3RheSB1cGRhdGVkIG9uIEVsaW0gQ2hyaXN0aWFuIENvbGxlZ2UgYWN0aXZpdGllcywgZXZlbnRzLCBhbmQgYW5ub3VuY2VtZW50cyIsInN0YXJ0X3VybCI6Ii8iLCJkaXNwbGF5Ijoic3RhbmRhbG9uZSIsImJhY2tncm91bmRfY29sb3IiOiIjMDAyMTQ3IiwidGhlbWVfY29sb3IiOiIjMDAyMTQ3Iiwib3JpZW50YXRpb24iOiJwb3J0cmFpdC1wcmltYXJ5IiwiaWNvbnMiOlt7InNyYyI6Imh0dHBzOi8vcGZzdC5jZjIucG9lY2RuLm5ldC9iYXNlL2ltYWdlLzNiNGYwNjBhZjIwYmE5NzRjMGI4MWRkNjVkMzcyMWJhZjg2YzdmYzZkYjg3YThkMDk2MmZjZjUwYjFjMDRjYT93PTQxMCZoPTQyOCIsInR5cGUiOiJpbWFnZS9wbmciLCJzaXplcyI6IjE5Mng5NiJ9LHsic3JjIjoiaHR0cHM6Ly9wZnN0LmNmMi5wb2VjZG4ubmV0L2Jhc2UvaW1hZ2UvM2I0ZjA2MGFmMjBiYTk3NGMwYjgxZGQ2NWQzNzIxYmFmODZjN2ZjNmRiODdhOGQwOTYyZmNmNTBiMWMwNGNhP3c9NDEwJmg9NDI4IiwidHlwZSI6ImltYWdlL3BuZyIsInNpemVzIjoiNTEyeDUxMiJ9XX0=">
+    <link rel="manifest" href="data:application/json;base64,eyJuYW1lIjoiRUNDIEludGVyTWVkaWEgQ2x1YiIsInNob3J0X25hbWUiOiJFQ0MgSW50ZXJNZWRpYSIsImRlc2NyaXB0aW9uIjoiU3RheSB1cGRhdGVkIG9uIEVsaW0gQ2hyaXN0aWFuIENvbGxlZ2UgYWN0aXZpdGllcywgZXZlbnRzLCBhbmQgYW5ub3VuY2VtZW50cyIsInN0YXJ0X3VybCI6Ii8iLCJkaXNwbGF5IjoidGFuZGFsb25lIiwib3JpZW50YXRpb24iOiJwb3J0cmFpdCIsImJhY2tncm91bmRfY29sb3IiOiIjRkZGRkZGIiwiY29sb3JzIjpbeyJzcmMiOiJhcHBsaWNhdGlvbi9qc29uIiwidHlwZSI6InRleHQvY3NzIn1dLCJpY29ucyI6W3sic3JjIjoiL2ltZy9pY29uLTQ4LnBuZyIsInNpemVzIjoiNDh4NDgiLCJ0eXBlIjoiaW1hZ2UvcG5nIn0seyJzcmMiOiIvaW1nL2ljb24tNzIucG5nIiwic2l6ZXMiOiI3Mng3MiIsInR5cGUiOiJpbWFnZS9wbmcifSx7InNyYyI6Ii9pbWcvaWNvbi05Ni5wbmciLCJzaXplcyI6Ijk2eDk2IiwidHlwZSI6ImltYWdlL3BuZyJ9LHsic3JjIjoiL2ltZy9pY29uLTE0NC5wbmciLCJzaXplcyI6IjE0NHgxNDQiLCJ0eXBlIjoiaW1hZ2UvcG5nIn0seyJzcmMiOiIvaW1nL2ljb24tMTY4LnBuZyIsInNpemVzIjoiMTY4eDE2OCIsInR5cGUiOiJpbWFnZS9wbmcifSx7InNyYyI6Ii9pbWcvaWNvbi0xOTIucG5nIiwic2l6ZXMiOiIxOTJ4MTkyIiwidHlwZSI6ImltYWdlL3BuZyJ9LHsic3JjIjoiL2ltZy9pY29uLTUxMi5wbmciLCJzaXplcyI6IjUxMng1MTIiLCJ0eXBlIjoiaW1hZ2UvcG5nIn1dfQ==">
+    <link rel="apple-touch-icon" href="/img/icon-192.png">
     
-    <link href="https://fonts.googleapis.com/css2?family=Algerian&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Bryndan+Write&display=swap" rel="stylesheet">
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-firestore-compat.js"></script>
     <style>
-        body {
-            font-family: Arial, sans-serif;
+        /* ... (Your existing CSS code here) ... */
+        :root {
+            --primary-color: #002147; /* Elim Navy */
+            --secondary-color: #FDB913; /* Elim Gold */
+            --background-color: #f0f0f0;
+            --text-color: #333;
+            --light-text-color: #fff;
+            --border-radius: 8px;
+            --padding: 15px;
+            --transition-speed: 0.3s;
+        }
+
+        /* Base styles */
+        body, html {
             margin: 0;
             padding: 0;
-            background-color: #f4f4f4;
-            overflow: hidden;
+            font-family: 'Arial', sans-serif;
+            background-color: var(--background-color);
+            color: var(--text-color);
+            line-height: 1.6;
         }
-        .page-border {
-            box-sizing: border-box;
-            min-height: 100vh;
-            min-width: 100vw;
-            border: 12px solid #002147;
-            padding: 0;
-            position: relative;
-        }
-        .page-border-inner {
-            box-sizing: border-box;
-            min-height: calc(100vh - 24px);
-            min-width: calc(100vw - 24px);
-            border: 8px solid #fff;
-            padding: 0;
-            position: relative;
-        }
-        
-        /* Install App Banner */
-        #installBanner {
-            display: none;
-            background: linear-gradient(135deg, #002147 0%, #0066CC 100%);
-            color: white;
-            padding: 12px 20px;
-            position: relative;
-            z-index: 1000;
-            border-bottom: 2px solid white;
-        }
-        #installBanner .banner-content {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            max-width: 100%;
-        }
-        #installBanner .banner-info {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-        }
-        #installBanner .banner-logo {
-            width: 32px;
-            height: 32px;
-            background: white;
-            border-radius: 8px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: bold;
-            color: #002147;
-            font-size: 14px;
-        }
-        #installBanner .banner-text h4 {
-            margin: 0;
-            font-size: 14px;
-            font-weight: 600;
-        }
-        #installBanner .banner-text p {
-            margin: 0;
-            font-size: 12px;
-            opacity: 0.9;
-        }
-        #installBanner .banner-actions {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-        #installBtn {
-            background: white;
-            color: #002147;
-            border: none;
-            padding: 8px 16px;
-            border-radius: 6px;
-            font-size: 12px;
-            font-weight: 600;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            gap: 4px;
-            transition: all 0.2s ease;
-        }
-        #installBtn:hover {
-            background: #f0f0f0;
-            transform: translateY(-1px);
-        }
-        #dismissBtn {
-            background: none;
-            border: none;
-            color: white;
-            cursor: pointer;
-            padding: 8px;
-            border-radius: 4px;
-            opacity: 0.8;
-            transition: opacity 0.2s ease;
-        }
-        #dismissBtn:hover {
-            opacity: 1;
-        }
-        
-        /* Offline indicator */
-        .offline-indicator {
-            position: fixed;
-            top: 10px;
-            right: 10px;
-            background: #ff6b6b;
-            color: white;
-            padding: 8px 12px;
-            border-radius: 20px;
-            font-size: 12px;
-            z-index: 1001;
-            display: none;
-            animation: fadeIn 0.3s ease;
-        }
-        .offline-indicator.online {
-            background: #51cf66;
-        }
-        
+
+        /* Header */
         header {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            background: #002147;
-            color: white;
-            padding: 15px 20px;
-            border-bottom: 2px solid white;
+            background-color: var(--primary-color);
+            color: var(--light-text-color);
+            padding: var(--padding);
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
         }
-        header img {
-            max-width: 50px;
-            margin-bottom: 10px;
-            border-radius: 15px;
-        }
+
         header h1 {
             margin: 0;
-            font-size: clamp(18px, 4vw, 24px);
-            text-align: center;
+            font-size: 1.5em;
         }
-        header h2 {
-            font-family: 'Algerian', serif;
-            margin: 0;
-            font-size: clamp(16px, 3vw, 20px);
-            font-weight: normal;
-            text-align: center;
+
+        /* Main Content */
+        main {
+            padding: var(--padding);
+            max-width: 800px;
+            margin: 0 auto;
         }
-        .welcome {
-            padding: 20px;
-            text-align: center;
-        }
-        .login-form, .admin-edit-form, .detail-page, .home-page {
+
+        .page {
             display: none;
-            margin: 20px auto;
-            padding: 20px;
-            background: white;
-            border-radius: 5px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            max-width: 90%;
-            border: 2px solid white;
-            max-height: 400px;
-            overflow-y: auto;
         }
-        .posts {
-            padding: 20px;
-            text-align: center;
-            max-height: 400px;
-            overflow-y: auto;
+
+        .page.active {
+            display: block;
         }
-        .guest-count {
-            margin-top: 20px;
-            font-weight: bold;
-        }
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
-        @keyframes bounce {
-            0%, 20%, 50%, 80%, 100% {
-                transform: translateY(0);
-            }
-            40% {
-                transform: translateY(-5px);
-            }
-            60% {
-                transform: translateY(-3px);
-            }
-        }
-        .animated {
-            animation: fadeIn 2s ease-in;
-        }
-        .bounce {
-            animation: bounce 1s infinite;
-        }
-        .save-button {
-            margin-bottom: 10px;
-            background: #4CAF50;
-            color: white;
+
+        /* Buttons and Inputs */
+        button, input[type="submit"], .btn {
+            background-color: var(--secondary-color);
+            color: var(--primary-color);
             border: none;
-            padding: 10px;
-            border-radius: 5px;
+            padding: 10px 20px;
+            border-radius: var(--border-radius);
             cursor: pointer;
-            width: auto;
-        }
-        .save-button:hover {
-            background: #45a049;
-        }
-        .category-container {
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-            margin: 20px 0;
-        }
-        .category {
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            padding: 15px;
-            background: white;
-            text-align: left;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-        .category:hover {
-            background-color: #e6f7ff;
-            transform: translateY(-2px);
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-        }
-        .category h3 {
-            margin: 0 0 8px 0;
-            padding: 0;
             font-weight: bold;
-            color: #007BFF;
-            font-size: 16px;
-        }
-        .category p {
-            margin: 0;
-            font-size: 14px;
-            line-height: 1.4;
-        }
-        .comment-section {
+            transition: background-color var(--transition-speed);
             margin-top: 10px;
         }
-        .edit-button {
-            background: #007BFF;
-            color: white;
-            border: none;
-            padding: 8px 16px;
-            border-radius: 5px;
-            cursor: pointer;
-            margin-top: 10px;
-            font-size: 14px;
+
+        button:hover, input[type="submit"]:hover, .btn:hover {
+            background-color: darken(var(--secondary-color), 10%);
         }
-        .edit-button:hover {
-            background: #0056b3;
+        
+        button:disabled {
+            background-color: #ccc;
+            cursor: not-allowed;
         }
-        .edit-input {
+
+        input[type="text"], input[type="password"], textarea {
             width: 100%;
-            margin-bottom: 10px;
-            padding: 8px;
-            border: 1px solid #ddd;
+            padding: 10px;
+            margin: 8px 0;
+            display: inline-block;
+            border: 1px solid #ccc;
             border-radius: 4px;
-            font-size: 14px;
+            box-sizing: border-box;
         }
-        .tabs {
-            display: flex;
-            justify-content: space-around;
-            margin-bottom: 20px;
-            flex-wrap: wrap;
-            gap: 5px;
+
+        /* Cards/Sections */
+        .card {
+            background-color: #fff;
+            padding: var(--padding);
+            border-radius: var(--border-radius);
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+            margin-bottom: var(--padding);
         }
-        .tab {
-            padding: 10px 15px;
-            background: #007BFF;
-            color: white;
-            border-radius: 5px;
-            cursor: pointer;
-            font-size: 12px;
-            text-align: center;
-            flex: 1;
-            min-width: 100px;
+        
+        .update-item, .comment-item {
+            border: 1px solid #eee;
+            padding: 10px;
+            border-radius: 4px;
+            margin-bottom: 10px;
+            position: relative;
         }
-        .tab:hover {
-            background: #0056b3;
-        }
-        .active {
-            background: #0056b3;
-        }
-        .home-page {
-            text-align: center;
-        }
-        .home-page h1 {
-            font-size: clamp(24px, 6vw, 36px);
-            margin: 20px 0;
-        }
-        .home-page p {
-            font-size: clamp(14px, 4vw, 18px);
-            margin: 10px 0;
-        }
-        #guestWelcomePopup {
-            display: none;
-            position: fixed;
-            z-index: 9999;
-            left: 0; top: 0; right: 0; bottom: 0;
-            background: rgba(0,0,0,0.4);
-            justify-content: center;
-            align-items: center;
-            animation: fadeIn 0.5s;
-        }
-        #guestWelcomePopup .popup-content {
-            background: #fff;
-            padding: 40px 30px;
-            border-radius: 20px;
-            box-shadow: 0 8px 32px rgba(0,0,0,0.2);
-            font-family: 'Bryndan Write', cursive, sans-serif;
-            font-size: clamp(1.5rem, 5vw, 2.5rem);
-            color: #007BFF;
-            text-align: center;
-            animation: popupScale 0.8s cubic-bezier(.68,-0.55,.27,1.55);
-            max-width: 90%;
-        }
-        @keyframes popupScale {
-            0% { transform: scale(0.2) rotate(-10deg); opacity: 0; }
-            60% { transform: scale(1.1) rotate(3deg); opacity: 1; }
-            80% { transform: scale(0.95) rotate(-2deg);}
-            100% { transform: scale(1) rotate(0deg);}
-        }
-        .read-text-btn {
-            background: #002147;
-            color: white;
-            border: none;
-            padding: 4px 8px;
-            border-radius: 5px;
-            cursor: pointer;
-            font-size: 12px;
-            margin-left: 8px;
+        
+        .update-item h3 {
+            color: var(--primary-color);
+            margin-top: 0;
             margin-bottom: 5px;
-            transition: background 0.2s;
-        }
-        .read-text-btn:hover {
-            background: #00112b;
         }
         
-        /* Mobile optimizations */
-        @media (max-width: 768px) {
-            .page-border {
-                border-width: 8px;
-            }
-            .page-border-inner {
-                border-width: 4px;
-                min-height: calc(100vh - 16px);
-                min-width: calc(100vw - 16px);
-            }
-            header {
-                padding: 10px 15px;
-            }
-            .login-form, .admin-edit-form, .detail-page, .home-page, .posts {
-                margin: 10px;
-                padding: 15px;
-                max-width: calc(100% - 20px);
-                max-height: calc(100vh - 200px);
-            }
-            .category-container {
-                margin: 15px 0;
-            }
-            .category {
-                padding: 12px;
-            }
-            .tabs {
-                flex-direction: column;
-                gap: 8px;
-            }
-            .tab {
-                padding: 12px;
-                font-size: 14px;
-            }
-            #installBanner {
-                padding: 8px 15px;
-            }
-            #installBanner .banner-content {
-                flex-direction: column;
-                gap: 8px;
-                text-align: center;
-            }
-            #installBanner .banner-actions {
-                justify-content: center;
-            }
+        .update-item .timestamp, .comment-item .timestamp {
+            display: block;
+            font-size: 0.8em;
+            color: #999;
+            margin-bottom: 5px;
         }
         
-        @media (max-width: 480px) {
-            header h1 {
-                font-size: 16px;
-            }
-            header h2 {
-                font-size: 14px;
-            }
-            .category h3 {
-                font-size: 14px;
-            }
-            .category p {
-                font-size: 12px;
-            }
-            input, textarea, button {
-                font-size: 16px !important;
-            }
+        .admin-controls {
+            margin-top: 10px;
+            border-top: 1px dashed #ccc;
+            padding-top: 10px;
         }
         
-        /* Focus states for accessibility */
-        button:focus, input:focus, textarea:focus {
-            outline: 2px solid #007BFF;
-            outline-offset: 2px;
+        .admin-controls button {
+            background-color: #e74c3c;
+            color: var(--light-text-color);
+            padding: 5px 10px;
+            font-size: 0.9em;
+            margin-right: 5px;
         }
         
-        /* Improved touch targets */
-        .category, button, .tab {
-            min-height: 44px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+        .admin-controls button.edit-btn {
+            background-color: #3498db;
+        }
+
+        /* Forms */
+        form label {
+            display: block;
+            margin-top: 10px;
+            font-weight: bold;
+        }
+
+        /* Guest Counter */
+        #guestCountDisplay {
+            text-align: center;
+            margin-bottom: var(--padding);
+            font-size: 1.1em;
+            font-weight: bold;
+            color: var(--primary-color);
+        }
+
+        /* Admin Status */
+        #adminStatus {
+            position: absolute;
+            top: 5px;
+            right: 5px;
+            padding: 3px 8px;
+            font-size: 0.7em;
+            font-weight: bold;
+            border-radius: 5px;
+            background-color: #2ecc71;
+            color: var(--light-text-color);
+        }
+
+        /* Navigation */
+        nav {
+            background-color: #fff;
+            padding: 10px 0;
+            text-align: center;
+            box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.05);
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            z-index: 1000;
+        }
+
+        nav button {
+            background: none;
+            border: none;
+            color: var(--primary-color);
+            font-weight: normal;
+            margin: 0 10px;
+            padding: 5px 10px;
+            transition: color var(--transition-speed);
+        }
+
+        nav button:hover, nav button.active {
+            color: var(--secondary-color);
+            border-bottom: 2px solid var(--secondary-color);
+        }
+
+        /* Alert Box */
+        #alertBox {
+            position: fixed;
+            top: 60px; /* Below header */
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 2000;
+            width: 90%;
+            max-width: 400px;
+            text-align: center;
+        }
+
+        .alert {
+            padding: 10px;
+            border-radius: var(--border-radius);
+            margin-bottom: 10px;
+            opacity: 0;
+            transition: opacity 0.5s, transform 0.5s;
+            transform: translateY(-20px);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        .alert.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .alert-success {
+            background-color: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+        }
+
+        .alert-error {
+            background-color: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
         }
         
-        .category {
-            flex-direction: column;
-            align-items: flex-start;
-            min-height: auto;
-            padding: 16px;
+        .alert-info {
+            background-color: #d1ecf1;
+            color: #0c5460;
+            border: 1px solid #bee5eb;
+        }
+
+        .online-indicator {
+            position: fixed;
+            bottom: 70px;
+            right: 15px;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background-color: #ccc;
+            z-index: 1001;
+        }
+
+        .online-indicator.online {
+            background-color: #2ecc71;
+        }
+        
+        /* Utility */
+        .hidden {
+            display: none !important;
         }
     </style>
 </head>
 <body>
-<div class="page-border">
-    <div class="page-border-inner">
-        <!-- Offline Indicator -->
-        <div id="offlineIndicator" class="offline-indicator">
-            📡 Offline Mode
-        </div>
+    <header>
+        <h1>ECC InterMedia Club</h1>
+        <div id="adminStatus" class="hidden">ADMIN</div>
+        <button onclick="showPage('homePage')" class="btn" style="position: absolute; right: 10px; top: 10px; padding: 5px 10px; font-size: 0.8em;">Home</button>
+    </header>
 
-        <!-- Install App Banner -->
-        <div id="installBanner">
-            <div class="banner-content">
-                <div class="banner-info">
-                    <div class="banner-logo">ECC</div>
-                    <div class="banner-text">
-                        <h4>Install ECC InterMedia Club</h4>
-                        <p>Get the app for a better experience</p>
-                    </div>
-                </div>
-                <div class="banner-actions">
-                    <button id="installBtn">
-                        <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3M12 3v1"></path>
-                        </svg>
-                        Install
-                    </button>
-                    <button id="dismissBtn">
-                        <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
-                        </svg>
-                    </button>
-                </div>
-            </div>
-        </div>
-
-        <header>
-            <img src="elim-logo.jpg.jpg" alt="Elim Christian College Logo" style="max-width:90px; margin-bottom:10px; border-radius:15px;">
-            <h1>ELIM CHRISTIAN COLLEGE, BANKET📚</h1>
-            <h2>Gadziriro Yeramangwana</h2>
-        </header>
-
-        <div class="home-page" id="homePage" style="display: block;">
-            <h1>Welcome to Elim Christian College, BANKET📚</h1>
-            <p>Your webpage to stay updated on school activities, events, and announcements.</p>
-            <p>Join us in nurturing a brighter future for our students!</p>
-            <button class="bounce" onclick="showLoginForm()">Next</button>
-        </div>
-
-        <div class="login-form" id="loginForm">
-            <h2>Login</h2>
-            <input type="text" placeholder="Account" id="account" required autocomplete="username">
-            <input type="password" placeholder="Password" id="password" required autocomplete="current-password">
-            <div style="margin:10px 0;">
-                <input type="checkbox" id="saveLoginInfo">
-                <label for="saveLoginInfo" style="font-size: 0.95em;">Save login information</label>
-            </div>
-            <button onclick="checkLogin()">Login</button>
+    <main>
+        <div id="alertBox"></div>
+        
+        <div id="homePage" class="page active card">
+            <h2>Welcome to the Club!</h2>
+            <p>Stay updated on Elim Christian College activities, events, and announcements.</p>
+            <div id="guestCountDisplay"></div>
             <button onclick="showPosts()">Continue as Guest</button>
+            <button onclick="showPage('loginPage')">Admin Login</button>
         </div>
 
-        <div class="posts" id="posts" style="display: none;">
-            <button class="edit-button" onclick="goBackCustom()">Back</button>
-            <h2>Updates</h2>
-            <div class="category-container">
-                <div class="category" onclick="viewDetail('upcomingEvents')">
-                    <h3>
-                        Upcoming Events
-                        <button class="read-text-btn" type="button" title="Read Aloud" onclick="event.stopPropagation(); readText('upcomingEvents');">🔊</button>
-                    </h3>
-                    <p id="upcomingEvents">Join us for our annual sports day on March 15th!</p>
-                </div>
-                <div class="category" onclick="viewDetail('weeklyReview')">
-                    <h3>
-                        Weekly Review (Vlog)
-                        <button class="read-text-btn" type="button" title="Read Aloud" onclick="event.stopPropagation(); readText('weeklyReview');">🔊</button>
-                    </h3>
-                    <p id="weeklyReview">This week we had a successful parent-teacher meeting.</p>
-                </div>
-                <div class="category">
-                    <h3>
-                        Your Reviews
-                        <button class="read-text-btn" type="button" title="Read Aloud" onclick="readReviewsText();">🔊</button>
-                    </h3>
-                    <div class="comment-section">
-                        <textarea id="guestComment" placeholder="Leave a comment..." style="width: 100%; min-height: 60px; padding: 8px; border: 1px solid #ddd; border-radius: 4px; font-size: 16px;"></textarea>
-                        <button onclick="submitComment()" style="margin-top: 8px;">Submit</button>
-                        <div id="commentsList"></div>
-                    </div>
-                </div>
-                <div class="category" onclick="viewDetail('aboutClub')">
-                    <h3>
-                        About the Club
-                        <button class="read-text-btn" type="button" title="Read Aloud" onclick="event.stopPropagation(); readText('aboutClub');">🔊</button>
-                    </h3>
-                    <p id="aboutClub">Join the photography club to capture beautiful moments and improve your skills. We welcome all levels, from beginners to advanced photographers. Together, we will explore creativity and share our passion for photography!</p>
-                </div>
-                <div class="category" onclick="viewDetail('announcements')">
-                    <h3>
-                        Announcements
-                        <button class="read-text-btn" type="button" title="Read Aloud" onclick="event.stopPropagation(); readText('announcements');">🔊</button>
-                    </h3>
-                    <p id="announcements">Stay tuned for important school announcements and updates!</p>
-                </div>
+        <div id="postsPage" class="page">
+            <h2>Latest Updates</h2>
+            
+            <div id="updateFormSection" class="card hidden">
+                <h3>New Update</h3>
+                <input type="text" id="updateTitle" placeholder="Update Title" required>
+                <textarea id="updateContent" placeholder="Update Content" rows="4" required></textarea>
+                <button onclick="submitUpdate()">Post Update</button>
+                <button onclick="cancelEdit()" class="hidden" id="cancelEditButton">Cancel Edit</button>
             </div>
+            
+            <div id="updatesList">
+                </div>
         </div>
 
-        <div class="detail-page" id="detailPage" style="display: none;">
-            <h2 id="detailTitle"></h2>
-            <button class="read-text-btn" type="button" title="Read Aloud" onclick="readDetailText();">🔊</button>
-            <p id="detailContent"></p>
-            <button onclick="closeDetail()">Close</button>
-        </div>
-
-        <div class="admin-edit-form" id="adminEditForm">
-            <button class="edit-button" onclick="goBackCustom()">Back</button>
-            <div class="tabs">
-                <div class="tab active" onclick="showTab('editUpdates')">Edit Updates</div>
-                <div class="tab" onclick="showTab('submittedReviews')">Submitted Reviews</div>
-                <div class="tab" onclick="showTab('adminAccount')">Admin Account</div>
+        <div id="commentsPage" class="page">
+            <h2>Guest Comments</h2>
+            
+            <div class="card">
+                <h3>Leave a Comment</h3>
+                <input type="text" id="commentAuthor" placeholder="Your Name (Optional)">
+                <textarea id="commentContent" placeholder="Your Comment" rows="3" required></textarea>
+                <button onclick="submitComment()">Submit Comment</button>
             </div>
-            <div id="editUpdates" class="tabContent">
-                <button class="save-button" onclick="savePost()">Save Changes</button>
-                <h2>Edit Updates</h2>
-                <div class="category-container">
-                    <div class="category">
-                        <h3>Upcoming Events</h3>
-                        <textarea id="editUpcomingEvents" class="edit-input" placeholder="Edit Upcoming Events..."></textarea>
-                    </div>
-                    <div class="category">
-                        <h3>Weekly Review (Vlog)</h3>
-                        <textarea id="editWeeklyReview" class="edit-input" placeholder="Edit Weekly Review..."></textarea>
-                    </div>
-                    <div class="category">
-                        <h3>About the Club</h3>
-                        <textarea id="editAboutClub" class="edit-input" placeholder="Edit About the Club..."></textarea>
-                    </div>
-                    <div class="category">
-                        <h3>Announcements</h3>
-                        <textarea id="editAnnouncements" class="edit-input" placeholder="Edit Announcements..."></textarea>
-                    </div>
+
+            <div id="commentsList">
                 </div>
-            </div>
-            <div id="submittedReviews" class="tabContent" style="display: none;">
-                <h3>Submitted Reviews</h3>
-                <div id="adminCommentsList" style="max-height: 200px; overflow-y: auto;"></div>
-            </div>
-            <div id="adminAccount" class="tabContent" style="display: none;">
-                <h3>Change Admin Username & Password</h3>
-                <form onsubmit="event.preventDefault(); changeAdminCredentials();">
-                    <label for="newAdminUsername">New Username:</label>
-                    <input type="text" id="newAdminUsername" class="edit-input" required>
-                    <br>
-                    <label for="newAdminPassword">New Password:</label>
-                    <input type="password" id="newAdminPassword" class="edit-input" required>
-                    <br>
-                    <button class="save-button" type="submit">Change Credentials</button>
-                </form>
-                <div id="adminChangeMsg" style="color:green; margin-top:10px;"></div>
-            </div>
-            <input type="file" id="imageUpload" accept="image/*" onchange="previewImage(event)">
-            <img id="imagePreview" style="max-width: 100%; display: none;" />
-            <div class="guest-count" id="guestCountAdmin">Guests visited: 0</div>
         </div>
 
-        <!-- Guest Welcome Popup -->
-        <div id="guestWelcomePopup" style="display:none;">
-            <div class="popup-content">
-                <span id="welcomeTypewriter"></span>
+        <div id="loginPage" class="page card">
+            <h2>Admin Login</h2>
+            <form id="loginForm">
+                <label for="account">Account Name</label>
+                <input type="text" id="account" required>
+                
+                <label for="password">Password</label>
+                <input type="password" id="password" required>
+                
+                <label>
+                    <input type="checkbox" id="saveLoginInfo"> Remember Login (Local Only)
+                </label>
+                
+                <button type="button" onclick="checkLogin()">Login</button>
+                <button type="button" onclick="showHomePage()">Back</button>
+            </form>
+            
+            <div id="adminSettings" class="hidden" style="margin-top: 20px;">
+                <h3>Admin Tools</h3>
+                <button onclick="resetApp()">Reset All Data</button>
+                <button onclick="logout()">Logout</button>
             </div>
         </div>
-    </div>
-</div>
+    </main>
+    
+    <div class="online-indicator" id="onlineIndicator"></div>
+
+    <nav id="navBar" class="hidden">
+        <button id="navHome" onclick="showHomePage()">Home</button>
+        <button id="navUpdates" onclick="showPosts()">Updates</button>
+        <button id="navComments" onclick="showComments()">Comments</button>
+    </nav>
 
 <script>
-    // Initialize default data
-    let updates = {
-        upcomingEvents: "Join us for our annual sports day on March 15th!",
-        weeklyReview: "This week we had a successful parent-teacher meeting.",
-        aboutClub: "Join the photography club to capture beautiful moments and improve your skills. We welcome all levels, from beginners to advanced photographers. Together, we will explore creativity and share our passion for photography!",
-        announcements: "Stay tuned for important school announcements and updates!"
+    // 🚨🚨 START: FIREBASE CONFIGURATION 🚨🚨
+    // ⚠️ WARNING: YOU MUST REPLACE THESE PLACEHOLDERS WITH YOUR ACTUAL FIREBASE PROJECT CONFIG
+    const firebaseConfig = {
+        apiKey: "YOUR_API_KEY_HERE",
+        authDomain: "YOUR_PROJECT.firebaseapp.com",
+        projectId: "YOUR_PROJECT_ID",
+        storageBucket: "YOUR_PROJECT.appspot.com",
+        messagingSenderId: "YOUR_MESSAGING_SENDER_ID",
+        appId: "YOUR_APP_ID"
     };
 
-    let guestCount = 0;
-    let comments = [];
+    // Initialize Firebase and Firestore
+    const firebaseApp = firebase.initializeApp(firebaseConfig);
+    const db = firebaseApp.firestore();
+    const APP_DOCUMENT_ID = 'ecc_club_data'; // The single document where all app data is stored
+    // 🚨🚨 END: FIREBASE CONFIGURATION 🚨🚨
+    
+    let appData = {
+        updates: [],
+        comments: [],
+        guestCount: 0,
+        adminCreds: { account: 'admin', password: 'password123' }, // Default for first run
+        isAdminLoggedIn: false,
+        editingUpdateId: null
+    };
 
-    // Data persistence functions
+    // --- Utility Functions ---
+
+    /**
+     * 🟢 MODIFIED: Saves data to local storage for PWA resilience, AND 
+     * attempts to save to Firestore ONLY if the admin is logged in.
+     */
     function saveAppData() {
-        const appData = {
-            updates: updates,
-            comments: comments,
-            guestCount: guestCount,
-            lastSaved: new Date().toISOString()
-        };
+        console.log('Saving data...');
+
+        // 1. Save locally for PWA offline resilience (always)
         localStorage.setItem('eccAppData', JSON.stringify(appData));
-        console.log('App data saved');
-    }
-
-    function loadAppData() {
-        try {
-            const savedData = localStorage.getItem('eccAppData');
-            if (savedData) {
-                const appData = JSON.parse(savedData);
-                updates = appData.updates || updates;
-                comments = appData.comments || [];
-                guestCount = appData.guestCount || 0;
-                
-                // Update UI with loaded data
-                updateUIWithData();
-                console.log('App data loaded successfully');
-            }
-        } catch (error) {
-            console.error('Error loading app data:', error);
-        }
-    }
-
-    function updateUIWithData() {
-        // Update content on the page
-        if (document.getElementById('upcomingEvents')) {
-            document.getElementById('upcomingEvents').innerText = updates.upcomingEvents;
-        }
-        if (document.getElementById('weeklyReview')) {
-            document.getElementById('weeklyReview').innerText = updates.weeklyReview;
-        }
-        if (document.getElementById('aboutClub')) {
-            document.getElementById('aboutClub').innerText = updates.aboutClub;
-        }
-        if (document.getElementById('announcements')) {
-            document.getElementById('announcements').innerText = updates.announcements;
-        }
         
-        // Update admin forms if visible
-        if (document.getElementById('editUpcomingEvents')) {
-            document.getElementById('editUpcomingEvents').value = updates.upcomingEvents;
-        }
-        if (document.getElementById('editWeeklyReview')) {
-            document.getElementById('editWeeklyReview').value = updates.weeklyReview;
-        }
-        if (document.getElementById('editAboutClub')) {
-            document.getElementById('editAboutClub').value = updates.aboutClub;
-        }
-        if (document.getElementById('editAnnouncements')) {
-            document.getElementById('editAnnouncements').value = updates.announcements;
-        }
-        
-        // Update comments
-        displayComments();
-        loadComments();
-        
-        // Update guest count
-        if (document.getElementById('guestCountAdmin')) {
-            document.getElementById('guestCountAdmin').innerText = `Guests visited: ${guestCount}`;
+        // 2. Attempt to save to the Cloud (only if the user is the admin)
+        if (appData.isAdminLoggedIn) {
+            // Create a temporary object to send to the cloud, excluding the local login state
+            const dataToSave = { ...appData, isAdminLoggedIn: false };
+            
+            db.collection('app_data').doc(APP_DOCUMENT_ID).set(dataToSave)
+                .then(() => {
+                    showAlert('✅ Data saved to Cloud successfully!', 'success');
+                })
+                .catch(error => {
+                    console.error("Error writing document to Cloud:", error);
+                    showAlert('❌ Error saving data to Cloud! Check connection or console.', 'error');
+                });
         }
     }
 
-    // PWA Install functionality
-    let deferredPrompt;
-    const installBanner = document.getElementById('installBanner');
-    const installBtn = document.getElementById('installBtn');
-    const dismissBtn = document.getElementById('dismissBtn');
-
-    // Show install banner if PWA installable
-    window.addEventListener('beforeinstallprompt', (e) => {
-        e.preventDefault();
-        deferredPrompt = e;
-        installBanner.style.display = 'block';
-    });
-
-    // Handle install button click
-    installBtn.addEventListener('click', async () => {
-        if (deferredPrompt) {
-            deferredPrompt.prompt();
-            const { outcome } = await deferredPrompt.userChoice;
-            if (outcome === 'accepted') {
-                installBanner.style.display = 'none';
-            }
-            deferredPrompt = null;
+    /**
+     * 🟢 NEW: Replaces loadAppData(). Sets up a real-time listener to sync all data 
+     * from the cloud.
+     */
+    function startRealTimeSync() {
+        // 1. Load from local storage immediately for fast load/offline mode
+        const savedData = localStorage.getItem('eccAppData');
+        if (savedData) {
+            const localData = JSON.parse(savedData);
+            // Only update data structure, but keep local login status separate
+            const currentIsAdmin = appData.isAdminLoggedIn;
+            appData = localData;
+            appData.isAdminLoggedIn = currentIsAdmin;
+            console.log("Initial data loaded from local storage.");
+            updateUI();
         }
-    });
 
-    // Handle dismiss button click
-    dismissBtn.addEventListener('click', () => {
-        installBanner.style.display = 'none';
-    });
+        // 2. Set up real-time listener for cloud updates (overwrites local data if successful)
+        db.collection('app_data').doc(APP_DOCUMENT_ID)
+            .onSnapshot(doc => {
+                if (doc.exists) {
+                    const cloudData = doc.data();
+                    const currentIsAdmin = appData.isAdminLoggedIn;
+                    
+                    // Overwrite all appData properties with cloud data
+                    Object.assign(appData, cloudData);
 
-    // Hide install banner if already installed
-    window.addEventListener('appinstalled', () => {
-        installBanner.style.display = 'none';
-    });
+                    // IMPORTANT: Preserve the current login status, as this is session-specific.
+                    appData.isAdminLoggedIn = currentIsAdmin; 
 
-    // Enhanced service worker for offline functionality
-    if ('serviceWorker' in navigator) {
-        navigator.serviceWorker.register('data:text/javascript;base64,Ly8gRW5oYW5jZWQgc2VydmljZSB3b3JrZXIgZm9yIG9mZmxpbmUgZnVuY3Rpb25hbGl0eQpjb25zdCBDQUNIRV9OQU1FID0gJ2VjYy1pbnRlcm1lZGlhLXYyJzsKY29uc3QgdXJsc1RvQ2FjaGUgPSBbCiAgJy8nLAogICcvaW5kZXguaHRtbCcsCiAgJ2h0dHBzOi8vZm9udHMuZ29vZ2xlYXBpcy5jb20vY3NzMj9mYW1pbHk9QWxnZXJpYW4mZGlzcGxheT1zd2FwJywKICAnaHR0cHM6Ly9mb250cy5nb29nbGVhcGlzLmNvbS9jc3MyP2ZhbWlseT1CcnluZGFuK1dyaXRlJmRpc3BsYXk9c3dhcCcsCiAgJ2h0dHBzOi8vcGZzdC5jZjIucG9lY2RuLm5ldC9iYXNlL2ltYWdlLzNiNGYwNjBhZjIwYmE5NzRjMGI4MWRkNjVkMzcyMWJhZjg2YzdmYzZkYjg3YThkMDk2MmZjZjUwYjFjMDRjYT93PTQxMCZoPTQyOCcKXTsKCnNlbGYuYWRkRXZlbnRMaXN0ZW5lcignaW5zdGFsbCcsIGV2ZW50ID0+IHsKICBldmVudC53YWl0VW50aWwoCiAgICBjYWNoZXMub3BlbihDQUNIRV9OQU1FKQogICAgICAudGhlbihjYWNoZSA9PiBjYWNoZS5hZGRBbGwodXJsc1RvQ2FjaGUpKQogICk7Cn0pOwoKc2VsZi5hZGRFdmVudExpc3RlbmVyKCdmZXRjaCcsIGV2ZW50ID0+IHsKICBldmVudC5yZXNwb25kV2l0aCgKICAgIGNhY2hlcy5tYXRjaChldmVudC5yZXF1ZXN0KQogICAgICAudGhlbihyZXNwb25zZSA9PiB7CiAgICAgICAgaWYgKHJlc3BvbnNlKSB7CiAgICAgICAgICByZXR1cm4gcmVzcG9uc2U7CiAgICAgICAgfQogICAgICAgIHJldHVybiBmZXRjaChldmVudC5yZXF1ZXN0KS50aGVuKHJlc3BvbnNlID0+IHsKICAgICAgICAgIGlmICghcmVzcG9uc2UgfHwgcmVzcG9uc2Uuc3RhdHVzICE9PSAyMDAgfHwgcmVzcG9uc2UudHlwZSAhPT0gJ2Jhc2ljJykgewogICAgICAgICAgICByZXR1cm4gcmVzcG9uc2U7CiAgICAgICAgICB9CiAgICAgICAgICBjb25zdCByZXNwb25zZVRvQ2FjaGUgPSByZXNwb25zZS5jbG9uZSgpOwogICAgICAgICAgY2FjaGVzLm9wZW4oQ0FDSEVfTkFNRSkKICAgICAgICAgICAgLnRoZW4oY2FjaGUgPT4gewogICAgICAgICAgICAgIGNhY2hlLnB1dChldmVudC5yZXF1ZXN0LCByZXNwb25zZVRvQ2FjaGUpOwogICAgICAgICAgICB9KTsKICAgICAgICAgIHJldHVybiByZXNwb25zZTsKICAgICAgICB9KTsKICAgICAgfSkKICApOwp9KTs=')
-          .then(() => console.log('Enhanced Service Worker registered'))
-          .catch(err => console.log('Service Worker registration failed'));
+                    // Re-save the merged data to local storage for persistence
+                    localStorage.setItem('eccAppData', JSON.stringify(appData));
+                    
+                    console.log("Cloud update received and applied.");
+                    showAlert('🚀 Content updated from Cloud!', 'info');
+                    updateUI(); // Re-render the interface with fresh data
+                } else {
+                    console.log("No cloud data found. Using local data.");
+                    // If this is the very first time, save the initial data to the cloud
+                    if (appData.isAdminLoggedIn) {
+                       saveAppData(); 
+                    }
+                }
+            }, error => {
+                console.error("Firestore listener error:", error);
+                showAlert('⚠️ Failed to sync with Cloud database. Running offline/locally.', 'warning');
+            });
     }
 
-    // Network status monitoring
-    function updateOnlineStatus() {
-        const indicator = document.getElementById('offlineIndicator');
-        if (navigator.onLine) {
-            indicator.textContent = '📡 Online';
-            indicator.classList.add('online');
-            indicator.style.display = 'none';
+    /**
+     * 🟢 NEW: Central function to re-render all dynamic parts of the UI.
+     */
+    function updateUI() {
+        renderUpdates();
+        renderComments();
+        updateGuestCountDisplay();
+        document.getElementById('adminStatus').classList.toggle('hidden', !appData.isAdminLoggedIn);
+        document.getElementById('updateFormSection').classList.toggle('hidden', !appData.isAdminLoggedIn);
+        document.getElementById('adminSettings').classList.toggle('hidden', !appData.isAdminLoggedIn);
+    }
+
+    // --- View and Navigation Functions ---
+
+    function showPage(pageId) {
+        document.querySelectorAll('.page').forEach(page => {
+            page.classList.remove('active');
+        });
+        document.getElementById(pageId).classList.add('active');
+        
+        document.querySelectorAll('nav button').forEach(btn => {
+            btn.classList.remove('active');
+        });
+
+        if (pageId === 'homePage') {
+            document.getElementById('navBar').classList.add('hidden');
         } else {
-            indicator.textContent = '📡 Offline Mode';
+            document.getElementById('navBar').classList.remove('hidden');
+            if (pageId === 'postsPage') document.getElementById('navUpdates').classList.add('active');
+            if (pageId === 'commentsPage') document.getElementById('navComments').classList.add('active');
+        }
+    }
+
+    function showHomePage() {
+        showPage('homePage');
+        document.getElementById('navHome').classList.add('active');
+    }
+    
+    function showPosts() {
+        showPage('postsPage');
+        appData.guestCount++;
+        saveAppData(); // Save updated guest count
+        updateUI(); 
+    }
+
+    function showComments() {
+        showPage('commentsPage');
+        updateUI();
+    }
+
+    // --- Admin/Login Functions ---
+
+    function checkLogin() {
+        const account = document.getElementById('account').value;
+        const password = document.getElementById('password').value;
+        const saveInfo = document.getElementById('saveLoginInfo').checked;
+
+        if (account === appData.adminCreds.account && password === appData.adminCreds.password) {
+            appData.isAdminLoggedIn = true;
+            saveAppData(); // 🟢 MODIFIED: Save to Cloud after successful login
+
+            if (saveInfo) {
+                localStorage.setItem('savedLoginInfo', JSON.stringify({ account, password }));
+            } else {
+                localStorage.removeItem('savedLoginInfo');
+            }
+            
+            showAlert('Login Successful!', 'success');
+            showPosts();
+        } else {
+            showAlert('Invalid Account or Password!', 'error');
+        }
+    }
+
+    function logout() {
+        appData.isAdminLoggedIn = false;
+        appData.adminCreds = { account: 'admin', password: 'password123' }; // Reset to default
+        localStorage.removeItem('savedLoginInfo');
+        saveAppData(); // Save status (which also pushes the update to cloud, turning off admin status)
+        showAlert('Logged out successfully.', 'info');
+        showHomePage();
+    }
+    
+    function resetApp() {
+        if (confirm('WARNING: This will erase all updates, comments, and reset the guest count on all devices. Are you sure?')) {
+            appData = {
+                updates: [],
+                comments: [],
+                guestCount: 0,
+                adminCreds: { account: 'admin', password: 'password123' },
+                isAdminLoggedIn: appData.isAdminLoggedIn, // Keep current admin status
+                editingUpdateId: null
+            };
+            saveAppData(); // Save to cloud and local
+            localStorage.removeItem('savedLoginInfo');
+            showAlert('Application data has been fully reset.', 'success');
+            updateUI();
+            showPosts();
+        }
+    }
+
+    // --- Update Management Functions ---
+
+    function submitUpdate() {
+        const title = document.getElementById('updateTitle').value.trim();
+        const content = document.getElementById('updateContent').value.trim();
+
+        if (title && content) {
+            if (appData.editingUpdateId !== null) {
+                // Edit existing update
+                const index = appData.updates.findIndex(u => u.id === appData.editingUpdateId);
+                if (index !== -1) {
+                    appData.updates[index].title = title;
+                    appData.updates[index].content = content;
+                    appData.updates[index].timestamp = new Date().toLocaleString();
+                    showAlert('Update successfully modified!', 'success');
+                }
+            } else {
+                // New update
+                const newUpdate = {
+                    id: Date.now(),
+                    title: title,
+                    content: content,
+                    timestamp: new Date().toLocaleString()
+                };
+                appData.updates.unshift(newUpdate); // Add to the start
+                showAlert('New Update Posted!', 'success');
+            }
+
+            // Reset form and editing state
+            document.getElementById('updateTitle').value = '';
+            document.getElementById('updateContent').value = '';
+            appData.editingUpdateId = null;
+            document.getElementById('cancelEditButton').classList.add('hidden');
+
+            saveAppData(); // Save changes
+            updateUI(); 
+
+        } else {
+            showAlert('Please enter both a title and content for the update.', 'error');
+        }
+    }
+
+    function renderUpdates() {
+        const list = document.getElementById('updatesList');
+        list.innerHTML = '';
+
+        if (appData.updates.length === 0) {
+            list.innerHTML = '<p>No updates yet.</p>';
+            return;
+        }
+
+        appData.updates.forEach(update => {
+            const div = document.createElement('div');
+            div.className = 'update-item card';
+            div.innerHTML = `
+                <h3>${update.title}</h3>
+                <span class="timestamp">${update.timestamp}</span>
+                <p>${update.content.replace(/\n/g, '<br>')}</p>
+                ${appData.isAdminLoggedIn ? `
+                    <div class="admin-controls">
+                        <button class="edit-btn" onclick="editUpdate(${update.id})">Edit</button>
+                        <button onclick="deleteUpdate(${update.id})">Delete</button>
+                    </div>
+                ` : ''}
+            `;
+            list.appendChild(div);
+        });
+    }
+
+    function editUpdate(id) {
+        const update = appData.updates.find(u => u.id === id);
+        if (update) {
+            document.getElementById('updateTitle').value = update.title;
+            document.getElementById('updateContent').value = update.content;
+            appData.editingUpdateId = id;
+            document.getElementById('cancelEditButton').classList.remove('hidden');
+            showAlert(`Editing: "${update.title}"`, 'info');
+            // Scroll to the edit form
+            document.getElementById('updateFormSection').scrollIntoView({ behavior: 'smooth' });
+        }
+    }
+
+    function cancelEdit() {
+        document.getElementById('updateTitle').value = '';
+        document.getElementById('updateContent').value = '';
+        appData.editingUpdateId = null;
+        document.getElementById('cancelEditButton').classList.add('hidden');
+        showAlert('Edit cancelled.', 'warning');
+    }
+
+    function deleteUpdate(id) {
+        if (confirm('Are you sure you want to delete this update?')) {
+            appData.updates = appData.updates.filter(u => u.id !== id);
+            saveAppData(); // Save changes
+            updateUI(); 
+            showAlert('Update deleted.', 'warning');
+        }
+    }
+
+    // --- Comment Management Functions ---
+
+    function submitComment() {
+        const author = document.getElementById('commentAuthor').value.trim() || 'Anonymous Guest';
+        const content = document.getElementById('commentContent').value.trim();
+
+        if (content) {
+            const newComment = {
+                id: Date.now(),
+                author: author,
+                content: content,
+                timestamp: new Date().toLocaleString()
+            };
+            appData.comments.unshift(newComment); // Add to the start
+            
+            // Clear the form fields
+            document.getElementById('commentAuthor').value = '';
+            document.getElementById('commentContent').value = '';
+
+            saveAppData(); // Save changes
+            updateUI(); 
+            showAlert('Comment Submitted!', 'success');
+
+        } else {
+            showAlert('Please enter comment content.', 'error');
+        }
+    }
+
+    function renderComments() {
+        const list = document.getElementById('commentsList');
+        list.innerHTML = '';
+
+        if (appData.comments.length === 0) {
+            list.innerHTML = '<p>No comments yet.</p>';
+            return;
+        }
+
+        appData.comments.forEach(comment => {
+            const div = document.createElement('div');
+            div.className = 'comment-item';
+            div.innerHTML = `
+                <p><strong>${comment.author}</strong> <span class="timestamp">(${comment.timestamp})</span></p>
+                <p>${comment.content.replace(/\n/g, '<br>')}</p>
+                ${appData.isAdminLoggedIn ? `
+                    <div class="admin-controls">
+                        <button onclick="deleteComment(${comment.id})">Delete</button>
+                    </div>
+                ` : ''}
+            `;
+            list.appendChild(div);
+        });
+    }
+
+    function deleteComment(id) {
+        if (confirm('Are you sure you want to delete this comment?')) {
+            appData.comments = appData.comments.filter(c => c.id !== id);
+            saveAppData(); // Save changes
+            updateUI(); 
+            showAlert('Comment deleted.', 'warning');
+        }
+    }
+
+    // --- Guest Count Functions ---
+
+    function updateGuestCountDisplay() {
+        document.getElementById('guestCountDisplay').textContent = 
+            `Total Guest Views: ${appData.guestCount}`;
+    }
+
+    // --- Offline/Alert Functions ---
+    
+    function updateOnlineStatus() {
+        const indicator = document.getElementById('onlineIndicator');
+        if (navigator.onLine) {
+            indicator.classList.add('online');
+            indicator.title = "Online";
+        } else {
             indicator.classList.remove('online');
-            indicator.style.display = 'block';
+            indicator.title = "Offline";
         }
     }
 
     window.addEventListener('online', updateOnlineStatus);
     window.addEventListener('offline', updateOnlineStatus);
 
-    // Show the home page
-    function showHomePage() {
-        document.getElementById('homePage').style.display = 'block';
-        document.getElementById('loginForm').style.display = 'none';
-        document.getElementById('posts').style.display = 'none';
-        document.getElementById('adminEditForm').style.display = 'none';
-        document.getElementById('detailPage').style.display = 'none';
-        document.getElementById('guestWelcomePopup').style.display = 'none';
-    }
-
-    // Show the login form
-    function showLoginForm() {
-        document.getElementById('homePage').style.display = 'none';
-        document.getElementById('loginForm').style.display = 'block';
-        document.getElementById('posts').style.display = 'none';
-        document.getElementById('adminEditForm').style.display = 'none';
-        document.getElementById('detailPage').style.display = 'none';
-        document.getElementById('guestWelcomePopup').style.display = 'none';
-    }
-
-    // Show the posts for guests
-    function showPosts() {
-        guestCount++;
-        saveAppData(); // Save data when guest count increases
-        document.getElementById('homePage').style.display = 'none';
-        document.getElementById('posts').style.display = 'block';
-        document.getElementById('loginForm').style.display = 'none';
-        document.getElementById('adminEditForm').style.display = 'none';
-        document.getElementById('detailPage').style.display = 'none';
-        showGuestWelcomePopup();
-    }
-
-    // Show animated popup for guest
-    function showGuestWelcomePopup() {
-        document.getElementById('guestWelcomePopup').style.display = 'flex';
-        typeWelcomeText('Welcome Parent', 'welcomeTypewriter', 70, function() {
-            setTimeout(function() {
-                document.getElementById('guestWelcomePopup').style.display = 'none';
-            }, 600);
-        });
-    }
-
-    // View detail for a specific category
-    function viewDetail(category) {
-        document.getElementById('detailTitle').innerText = category.replace(/([A-Z])/g, ' $1').trim();
-        document.getElementById('detailContent').innerText = updates[category];
-        document.getElementById('posts').style.display = 'none';
-        document.getElementById('detailPage').style.display = 'block';
-    }
-
-    // Close detail view
-    function closeDetail() {
-        document.getElementById('detailPage').style.display = 'none';
-        document.getElementById('posts').style.display = 'block';
-    }
-
-    // Check login credentials
-    function checkLogin() {
-        const account = document.getElementById('account').value;
-        const password = document.getElementById('password').value;
-        const adminCreds = getAdminCredentials();
-
-        if (document.getElementById('saveLoginInfo').checked) {
-            localStorage.setItem('savedLoginInfo', JSON.stringify({ account, password }));
-        } else {
-            localStorage.removeItem('savedLoginInfo');
-        }
-
-        if ((account === 'Wilsontkay' && password === 'KayP') ||
-            (account === adminCreds.username && password === adminCreds.password)) {
-            showCustomAlert('Login successful! You can now edit updates.');
-            document.getElementById('adminEditForm').style.display = 'block';
-            document.getElementById('loginForm').style.display = 'none';
-            document.getElementById('posts').style.display = 'none';
-            document.getElementById('detailPage').style.display = 'none';
-            document.getElementById('guestCountAdmin').innerText = `Guests visited: ${guestCount}`;
-            loadAdminData();
-            loadComments();
-        } else {
-            showCustomAlert('Invalid account or password. Please try again.');
-        }
-    }
-
-    // Load current updates into admin form
-    function loadAdminData() {
-        document.getElementById('editUpcomingEvents').value = updates.upcomingEvents;
-        document.getElementById('editWeeklyReview').value = updates.weeklyReview;
-        document.getElementById('editAboutClub').value = updates.aboutClub;
-        document.getElementById('editAnnouncements').value = updates.announcements;
-    }
-
-    // Save the edited post
-    function savePost() {
-        updates.upcomingEvents = document.getElementById('editUpcomingEvents').value;
-        updates.weeklyReview = document.getElementById('editWeeklyReview').value;
-        updates.aboutClub = document.getElementById('editAboutClub').value;
-        updates.announcements = document.getElementById('editAnnouncements').value;
-
-        document.getElementById('upcomingEvents').innerText = updates.upcomingEvents;
-        document.getElementById('weeklyReview').innerText = updates.weeklyReview;
-        document.getElementById('aboutClub').innerText = updates.aboutClub;
-        document.getElementById('announcements').innerText = updates.announcements;
-
-        saveAppData(); // Save data to localStorage
-        showCustomAlert('Updates saved successfully!');
-    }
-
-    // Submit a guest comment
-    function submitComment() {
-        const comment = document.getElementById('guestComment').value;
-        if (comment) {
-            comments.push(comment);
-            document.getElementById('guestComment').value = '';
-            displayComments();
-            loadComments();
-            saveAppData(); // Save data to localStorage
-        } else {
-            showCustomAlert('Please enter a comment.');
-        }
-    }
-
-    // Display comments on the guest side
-    function displayComments() {
-        const commentsList = document.getElementById('commentsList');
-        commentsList.innerHTML = '';
-        comments.forEach((c) => {
-            commentsList.innerHTML += `<p style="border: 1px solid #eee; padding: 8px; margin: 5px 0; border-radius: 4px; background: #f9f9f9;">${c}</p>`;
-        });
-    }
-
-    // Load comments into admin page
-    function loadComments() {
-        const adminCommentsList = document.getElementById('adminCommentsList');
-        adminCommentsList.innerHTML = '';
-        comments.forEach((c) => {
-            adminCommentsList.innerHTML += `<p style="border: 1px solid #eee; padding: 8px; margin: 5px 0; border-radius: 4px; background: #f9f9f9;">${c}</p>`;
-        });
-    }
-
-    // Preview uploaded image
-    function previewImage(event) {
-        const reader = new FileReader();
-        reader.onload = function(){
-            const output = document.getElementById('imagePreview');
-            output.src = reader.result;
-            output.style.display = 'block';
-        }
-        reader.readAsDataURL(event.target.files[0]);
-    }
-
-    // Store admin credentials in localStorage for persistence
-    function getAdminCredentials() {
-        let creds = localStorage.getItem('adminCreds');
-        if (creds) {
-            return JSON.parse(creds);
-        }
-        return { username: 'admin', password: 'admin' };
-    }
-
-    function setAdminCredentials(username, password) {
-        localStorage.setItem('adminCreds', JSON.stringify({ username, password }));
-    }
-
-    // Change admin credentials
-    function changeAdminCredentials() {
-        const newUsername = document.getElementById('newAdminUsername').value.trim();
-        const newPassword = document.getElementById('newAdminPassword').value.trim();
-        if (newUsername && newPassword) {
-            setAdminCredentials(newUsername, newPassword);
-            document.getElementById('adminChangeMsg').innerText = "Admin credentials updated successfully!";
-            setTimeout(() => {
-                document.getElementById('adminChangeMsg').innerText = "";
-            }, 2500);
-        }
-    }
-
-    // Show selected tab in admin
-    function showTab(tab) {
-        const tabs = document.querySelectorAll('.tabContent');
-        tabs.forEach(t => t.style.display = 'none');
-        document.getElementById(tab).style.display = 'block';
-
-        const tabHeaders = document.querySelectorAll('.tab');
-        tabHeaders.forEach(t => t.classList.remove('active'));
-        document.querySelector(`.tab[onclick="showTab('${tab}')"]`).classList.add('active');
-    }
-
-    // Read text for each category
-    function readText(categoryId) {
-        const el = document.getElementById(categoryId);
-        if (el) {
-            speakText(el.innerText);
-        }
-    }
-
-    // Read all reviews/comments
-    function readReviewsText() {
-        const commentsList = document.getElementById('commentsList');
-        let text = "No reviews yet.";
-        if (commentsList && commentsList.innerText.trim() !== "") {
-            text = "Reviews: " + commentsList.innerText;
-        }
-        speakText(text);
-    }
-
-    // Read detail page text
-    function readDetailText() {
-        const title = document.getElementById('detailTitle').innerText;
-        const content = document.getElementById('detailContent').innerText;
-        speakText(title + ". " + content);
-    }
-
-    // Typing effect for Welcome Parent
-    function typeWelcomeText(text, elementId, speed = 70, callback) {
-        const el = document.getElementById(elementId);
-        el.innerHTML = '';
-        let i = 0;
-        function typeChar() {
-            if (i < text.length) {
-                el.innerHTML += text.charAt(i);
-                i++;
-                setTimeout(typeChar, speed);
-            } else if (typeof callback === 'function') {
-                callback();
-            }
-        }
-        typeChar();
-    }
-
-    // Custom back navigation
-    function goBackCustom() {
-        if ('speechSynthesis' in window) {
-            window.speechSynthesis.cancel();
-        }
-        document.getElementById('posts').style.display = 'none';
-        document.getElementById('adminEditForm').style.display = 'none';
-        document.getElementById('detailPage').style.display = 'none';
-        document.getElementById('loginForm').style.display = 'block';
-        document.getElementById('guestWelcomePopup').style.display = 'none';
-        document.getElementById('homePage').style.display = 'none';
-    }
-
-    // Speech synthesis helper
-    function speakText(text) {
-        if ('speechSynthesis' in window) {
-            window.speechSynthesis.cancel();
-            const utter = new SpeechSynthesisUtterance(text);
-            utter.rate = 1;
-            utter.pitch = 1;
-            window.speechSynthesis.speak(utter);
-        } else {
-            showCustomAlert("Sorry, your browser does not support text-to-speech.");
-        }
-    }
-
-    // Custom alert function to replace browser alert
-    function showCustomAlert(message) {
+    function showAlert(message, type) {
+        const alertBox = document.getElementById('alertBox');
         const alertDiv = document.createElement('div');
-        alertDiv.style.cssText = `
-            position: fixed;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            background: white;
-            padding: 20px 30px;
-            border-radius: 10px;
-            box-shadow: 0 8px 32px rgba(0,0,0,0.3);
-            z-index: 10000;
-            max-width: 90%;
-            text-align: center;
-            font-family: Arial, sans-serif;
-            animation: fadeIn 0.3s ease;
-        `;
-        alertDiv.innerHTML = `
-            <p style="margin: 0 0 15px 0; font-size: 16px; color: #333;">${message}</p>
-            <button onclick="this.parentElement.remove()" style="background: #007BFF; color: white; border: none; padding: 8px 20px; border-radius: 5px; cursor: pointer; font-size: 14px;">OK</button>
-        `;
-        document.body.appendChild(alertDiv);
-
-        // Auto-remove after 3 seconds
+        alertDiv.className = `alert alert-${type}`;
+        alertDiv.textContent = message;
+        
+        alertBox.appendChild(alertDiv);
+        
+        // Show the alert
         setTimeout(() => {
-            if (alertDiv.parentElement) {
-                alertDiv.remove();
-            }
+            alertDiv.classList.add('show');
+        }, 10); // Small delay for CSS transition
+
+        // Hide and remove after 3 seconds
+        setTimeout(() => {
+            alertDiv.classList.remove('show');
+            setTimeout(() => {
+                if (alertDiv.parentElement) {
+                    alertDiv.remove();
+                }
+            }, 500); // Wait for transition to finish
         }, 3000);
     }
 
     // Initialize app
     document.addEventListener('DOMContentLoaded', function() {
-        loadAppData(); // Load saved data first
+        // 🟢 MODIFIED: Start the real-time sync instead of a one-time load
+        startRealTimeSync(); 
         showHomePage();
         updateOnlineStatus(); // Check initial online status
 
@@ -1077,6 +801,7 @@
         });
 
         // Auto-save data periodically (every 5 minutes)
+        // This is primarily for saving the admin's local login session
         setInterval(saveAppData, 5 * 60 * 1000);
     });
 
@@ -1087,3 +812,4 @@
 </script>
 </body>
 </html>
+
